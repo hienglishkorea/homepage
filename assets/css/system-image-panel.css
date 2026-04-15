@@ -1,0 +1,74 @@
+/* system-image-panel.css: 스타일 분리 및 효과 추가 */
+.system-image-panel {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 18px;
+  margin-top: 18px;
+  background: #fff;
+}
+ .system-image-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 18px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  transition: transform 0.3s, box-shadow 0.3s, filter 0.3s;
+  cursor: pointer;
+  background: #fff;
+  aspect-ratio: 1/1;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 12px;
+}
+
+.system-image-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: transform 0.3s, filter 0.3s;
+  border-radius: 12px;
+  background: #fff;
+  padding: 8px;
+  box-sizing: border-box;
+}
+.system-image-item .system-desc {
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  background: rgba(30,30,60,0.82);
+  color: #fff;
+  padding: 18px 14px 14px;
+  font-size: 15px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+  z-index: 2;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.system-image-item.active {
+  z-index: 2;
+  transform: scale(1.12);
+  box-shadow: 0 0 32px 8px #7c3aed66, 0 2px 16px rgba(0,0,0,0.12);
+}
+.system-image-item.active img {
+  filter: brightness(1.08) drop-shadow(0 0 16px #7c3aed88);
+  transform: scale(1.08);
+}
+.system-image-item.active .system-desc {
+  opacity: 1;
+}
+.system-image-item.inactive {
+  filter: grayscale(0.5) blur(1px) brightness(0.85);
+  transform: scale(0.92);
+  z-index: 1;
+}
+@media (max-width: 760px) {
+  .system-image-panel {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, 1fr);
+  }
+}

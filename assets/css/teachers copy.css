@@ -1,0 +1,11 @@
+.teacher-right{
+  height:550px;
+  overflow:hidden;
+}
+
+.teacher-card{
+  height:440px;
+  margin-bottom:20px;
+  border-radius:24px;
+  padding:30px;
+}

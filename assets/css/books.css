@@ -1,0 +1,8 @@
+/* 기본 도서 CSS - 필요에 따라 수정하세요 */
+.book-card {
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 16px;
+  margin: 12px 0;
+  background: #fafbfc;
+}
