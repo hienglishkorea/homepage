@@ -1,15 +1,15 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ko">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>하이교육 | 기업 출강 영어 교육 · 기업 외국어 교육 전문</title>
-  <meta name="description" content="하이교육은 기업 출강 영어 교육, 기업 외국어 교육, 화상교육, TOSEB 말하기 평가, 맞춤 교재, HiFive 학사관리 시스템을 제공하는 기업 외국어 교육 전문 기관입니다." />
+  <title>하이잉글리쉬 | 기업 출강 영어 교육 · 기업 외국어 교육 전문</title>
+  <meta name="description" content="하이잉글리쉬는 기업 출강 영어 교육, 기업 외국어 교육, 화상교육, TOSEB 말하기 평가, 맞춤 교재, HiFive 학사관리 시스템을 제공하는 기업 외국어 교육 전문 기관입니다." />
   <meta name="keywords" content="기업출강, 기업 출강 영어 교육, 기업외국어교육, 사내영어교육, 출강교육, 화상교육, 비즈니스영어, 기업일본어교육, TOSEB, 기업어학교육" />
   <meta name="robots" content="index,follow" />
   <meta name="theme-color" content="#0d1b3f" />
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="하이교육 | 기업 출강 영어 교육 · 기업 외국어 교육 전문" />
+  <meta property="og:title" content="하이잉글리쉬 | 기업 출강 영어 교육 · 기업 외국어 교육 전문" />
   <meta property="og:description" content="결과로 증명하는 기업 외국어 교육. 출강교육, 화상교육, 집중교육, TOSEB 평가, 맞춤 교재, HiFive 운영관리." />
   <meta property="og:locale" content="ko_KR" />
   <link rel="canonical" href="https://www.hienglish.com/" />
@@ -458,31 +458,85 @@
     .featured-card h3, .case-card-new h3 { font-size: 22px; }
     .score-panel .score-box strong { font-size: 40px; }
   }
+
+  /* ===== 네비게이션 마그넷 호버 ===== */
+  .main-nav {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+  }
+  .main-nav a {
+    font-size: 18px;
+    font-weight: 600;
+    padding: 4px 8px;
+    white-space: nowrap;
+    display: inline-block;
+    text-decoration: none;
+    color: inherit;
+    border-radius: 6px;
+  }
+
+  /* ===== 돌아가기 버튼 ===== */
+  .btn-back {
+    display: inline-block;
+    padding: 10px 22px;
+    border-radius: 999px;
+    border: 1px solid #aaa;
+    background: #f0f0f0;
+    color: #666;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+  }
+  .btn-back:hover { background: #e0e0e0; color: #333; }
+
+  .floating-cta .back-top {
+    display: block;
+    margin-top: 8px;
+    padding: 8px 14px;
+    border-radius: 999px;
+    border: 1px solid #aaa;
+    background: #f0f0f0;
+    color: #666;
+    font-size: 12px;
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  .floating-cta .back-top:hover { background: #ddd; }
 </style>
 </head>
 <body>
   <header class="site-header">
     <div class="container header-inner">
-      <a href="#top" class="brand" aria-label="하이교육 홈으로 이동">
-        <img src="assets/images/하이교육.png" alt="하이교육 로고" class="brand-mark">
+      <a href="#top" class="brand" aria-label="하이잉글리쉬 홈으로 이동">
+        <img src="assets/images/하이잉글리쉬.png" alt="하이잉글리쉬 로고" class="brand-mark">
         <span>
           <span class="brand-name">HiEnglish</span>
           <span class="brand-sub">기업 외국어 교육 전문</span>
         </span>
       </a>
 
-      <nav class="main-nav" aria-label="주 메뉴">
-        <a href="#company">회사소개</a>
-        <a href="#program">프로그램</a>
-        <a href="#teachers">강사진</a>
-        <a href="#cases">교육사례</a>
-        <a href="#system">운영관리</a>
-        <a href="#contact">문의</a>
+      <nav class="main-nav" id="mainNav" aria-label="주 메뉴">
+        <a href="#특징">특징</a>
+        <a href="#연혁">연혁</a>
+        <a href="#성과">성과</a>
+        <a href="#강사">강사</a>
+        <a href="#솔루션">솔루션</a>
+        <a href="#프로그램">프로그램</a>
+        <a href="#운영">운영</a>
+        <a href="#자료">자료</a>
+        <a href="#교육문의">교육문의</a>
+        <a href="#강사지원">강사지원</a>
       </nav>
 
       <div class="header-cta">
-        <a class="btn btn-primary" href="#contact">교육문의</a>
-        <a class="btn btn-outline" href="#apply">강사지원</a>
+        <a class="btn btn-primary" href="#교육문의">교육문의</a>
+        <a class="btn btn-outline" href="#강사지원">강사지원</a>
       </div>
     </div>
   </header>
@@ -498,13 +552,13 @@
     기업 외국어 교육<br>성과로 증명합니다
   </span>
   <span class="headline headline-2">
-    HR이 신뢰하는<br> 출강 화상 교육
+    외국어 교육으로 기업 경쟁력 향상
   </span>
 </h1>
-          <p class="subcopy">HR이 신뢰하는 기업 외국어 교육 <span style="color:#ff3b3b;font-weight:800;">하이교육</span></p>
+          <p class="subcopy">HR이 신뢰하는 기업 외국어 교육 <span style="color:#ff3b3b;font-weight:800;">하이잉글리쉬</span></p>
           <div class="hero-actions">
-            <a class="btn btn-primary" href="#contact">교육 문의하기</a>
-            <a class="btn btn-outline" href="#program">프로그램 보기</a>
+            <a class="btn btn-primary" href="#교육문의">교육문의</a>
+            <a class="btn btn-outline" href="#강사지원">강사지원</a>
           </div>
           <div class="hero-note"></div>
         </div>
@@ -538,7 +592,6 @@
 </div>
 
         <div style="position:relative; margin-top:40px;">
-  <div style="position:absolute; left:-20px; top:10px; font-size:120px; color:#000; opacity:0.05;">←</div>
   <h2 style="margin:0; padding:32px; border-radius:16px; font-size:clamp(34px,6vw,64px); font-weight:900; line-height:1.2; letter-spacing:-0.04em; color:#ff4d6d; text-align:center;">
     경험·강사·시스템으로 성과를 만듭니다.
   </h2>
@@ -546,44 +599,10 @@
       </div>
     </section>
 
-    <section class="section" id="program" style="background:#0d1b3f; padding:120px 0;">
-      <div class="container">
-        <div class="section-head">
-          <div style="padding:40px 40px 80px; text-align:center; color:#ffffff;">
-            <h2 style="margin:0 0 16px; font-size:clamp(36px,5vw,56px); font-weight:900; letter-spacing:-0.04em; line-height:1.2;">
-              <span style="color:#ffd700;">25년의 신뢰</span>, 성과로 검증된 현업 직결형 커리큘럼<br>
-              <span style="color:#4b86ff;">기업 외국어 교육 맞춤 솔루션</span>
-            </h2>
-            <p style="margin:0; font-size:18px; color:rgba(255,255,255,0.85); max-width:900px; margin-inline:auto;">
-              국내 주요 기업이 선택한 직장인 최적화 프로그램으로 임직원의 비즈니스 경쟁력을 완성합니다.
-            </p>
-          </div>
-        </div>
-
-        <div class="program-steps">
-          <div class="step-card">
-            <div class="step-tag">출강교육</div>
-            <p>전국 강사풀 운영<br>다양한 코스 설계<br>출결·성과 안정 관리</p>
-          </div>
-          <div class="step-card">
-            <div class="step-tag">화상교육</div>
-            <p>시간·강사 자유 선택<br>1:1 맞춤 수업<br>편리한 일정 조정</p>
-          </div>
-          <div class="step-card">
-            <div class="step-tag">단기집중</div>
-            <p>연수원 합숙 교육<br>퇴근 후·주말 집중<br>주재원·전직원 특강</p>
-          </div>
-          <div class="step-card">
-            <div class="step-tag">평가면접</div>
-            <p>신속·정확한 회화 평가<br>임직원 어학 실력 측정<br>외국어 채용 면접 대행</p>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="section dark-section" id="difference">
+    <section class="section dark-section" id="특징">
   <div class="container">
     <div class="section-head">
-      <h2>하이교육이 다른 이유</h2>
+      <h2>기업 외국어 교육의 표준이 된 하이잉글리쉬의 차별성</h2>
     </div>
 
     <div class="diff-cards">
@@ -631,12 +650,11 @@
 </section>
 
 
-    <section class="section" id="history">
+    <section class="section" id="연혁">
       <div class="container">
         <div class="section-head history-head">
-          <h2 class="history-switch-title" style="margin:0 0 16px; font-size:clamp(36px,5vw,56px); font-weight:900; letter-spacing:-0.04em; line-height:1.2;">
-            <span style="color:oklab(96.501% 0.00513 0.00148 / 0.982);" class="history-title-a">시간으로 증명된</span>
-            <span style="color:#eab4b4;" class="history-title-b">3,000 HR의 선택</span>
+          <h2 style="margin:0 0 16px; font-size:clamp(36px,5vw,56px); font-weight:900; letter-spacing:-0.04em; line-height:1.2; color:#0d1b3f;">
+            시간으로 증명된 HR의 신뢰
           </h2>
                </div>
 
@@ -672,7 +690,7 @@
         </div>
       </div>
     </div>
-    <div class="history-scroll-ui" aria-label="History 스크롤">
+    <div class="history-scroll-ui" aria-label="History 스크롤" style="display:none;">
       <button class="history-btn up" aria-label="위로">▲</button>
       <div class="history-track"><div class="history-thumb" id="historyThumb"></div></div>
       <button class="history-btn down" aria-label="아래로">▼</button>
@@ -682,9 +700,9 @@
 <script src="assets/js/process-list-glow.js"></script>
 
           <article class="references-panel">
-  <h3 class="panel-title">(산업별) 실적</h3>
+  <h3 class="panel-title">실적</h3>
 
-  <div class="ref-scroll-ui" aria-label="실적 스크롤">
+  <div class="ref-scroll-ui" aria-label="실적 스크롤" style="display:none;">
       <button class="ref-btn up" aria-label="위로">▲</button>
       <div class="ref-track"><div class="ref-thumb" id="refThumb"></div></div>
       <button class="ref-btn down" aria-label="아래로">▼</button>
@@ -754,114 +772,7 @@
 
     
 
-    <!-- ===== Teachers Section ===== -->
-<section class="section" id="teachers">
-  <div class="container" style="display:grid; grid-template-columns:1fr 1fr; gap:40px; align-items:center;">
-    <!-- Left -->
-    <div class="teacher-left">
-      <h2 class="teacher-left-title">
-        강사가 바뀌면<br>
-        <span style="color:#2d6cff;">결과가 달라집니다</span>
-      </h2>
-      <p class="teacher-left-sub">
-        추천이 아닌,<br>
-        <span style="color:#ff2d2d;">데이터로 매칭합니다</span>
-      </p>
-    </div>
-
-    <!-- Right -->
-    <div class="teacher-right" id="teacherScroll">
-      <div class="teacher-track">
-
-        <div class="teacher-card teacher-feature-card">
-          <div class="teacher-feature-main">
-            <h3 class="teacher-feature-title">강사 추천 특징</h3>
-            <div class="teacher-feature-left">
-              <ul class="teacher-feature-list">
-                <li><span class="teacher-feature-dot"></span>복수 추천 시스템</li>
-                <li><span class="teacher-feature-dot"></span>동영상 이력서</li>
-                <li><span class="teacher-feature-dot"></span>HIT 훈련 프로그램</li>
-                <li><span class="teacher-feature-dot"></span>BELT 등급제</li>
-              </ul>
-            </div>
-            <div class="teacher-feature-divider" aria-hidden="true"></div>
-            <div class="teacher-feature-right">
-              <p class="teacher-feature-desc">전국 강사 DB 기반,<br><span class="teacher-feature-nowrap">빠르고 정확한 외국어 매칭</span></p>
-            </div>
-          </div>
-        </div>
-
-        <div class="teacher-card teacher-service-card">
-          <div class="teacher-card-header">
-            <h3 class="teacher-card-title">강사 추천 엔진</h3>
-            <div class="teacher-card-sub">
-              120명 교차 분석으로 1명 최적 매칭
-            </div>
-          </div>
-          <div class="filter-box" style="margin-top:12px;">
-            <h4>전국 강사 네트워크</h4>
-
-            <div class="filters">
-              <select id="teacherLang">
-                <option>언어 선택</option>
-                <option>영어</option>
-                <option>일본어</option>
-                <option>중국어</option>
-                <option>기타 외국어</option>
-              </select>
-
-              <select id="teacherRegion">
-                <option>지역 선택</option>
-                <option>서울·경기</option>
-                <option>충청</option>
-                <option>강원</option>
-                <option>영남</option>
-                <option>호남</option>
-                <option>제주</option>
-              </select>
-
-              <select id="teacherType">
-                <option>강사 유형</option>
-                <option>원어민</option>
-                <option>교포</option>
-                <option>한국인</option>
-              </select>
-            </div>
-
-            <button type="button" onclick="matchTeacher()">강사 추천</button>
-
-            <div id="teacherMatchResult"></div>
-          </div>
-        </div>
-
-        <div class="teacher-card profile-showcase">
-          <h3 class="teacher-profile-title">강사 추천 관리</h3>
-          <p class="teacher-profile-sub">수도권 3일·지방 5일 내 이력서 추천<br>강사교체 2주 일정변경·보충수업 관리</p>
-
-          <div class="teacher-image-roller" aria-label="강사 이미지 롤링">
-            <div class="tir-track">
-              <div class="tir-item"><img src="assets/images/1영어원어민강사.jpg" alt="강사 프로필"></div>
-              <div class="tir-item"><img src="assets/images/3영어원어민강사.jpg" alt="강사 프로필"></div>
-              <div class="tir-item tir-active"><img src="assets/images/2일본인강사.jpg" alt="강사 프로필"></div>
-              <div class="tir-item"><img src="assets/images/10중국어강사.jpg" alt="강사 프로필"></div>
-              <div class="tir-item"><img src="assets/images/7영어교포강사.jpg" alt="강사 프로필"></div>
-            </div>
-          </div>
-        </div>
-
-        <div class="teacher-card teacher-video-card">
-          <h3 class="teacher-video-title">강사 소개 영상</h3>
-          <p class="teacher-video-sub">강사 품질은 끝까지 보증합니다</p>
-          <video class="teacher-video" src="assets/images/강사동영상.mp4" controls playsinline muted autoplay></video>
-          <button type="button" class="teacher-video-sound-btn" aria-pressed="false">소리 켜기</button>
-        </div>
-
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="case-section section" id="cases">
+<section class="case-section section" id="성과">
     <div class="container">
 
       <div class="section-head">
@@ -1005,7 +916,7 @@
           </div>
           <blockquote class="quote">
             <strong class="quote-label">소감</strong>
-            급한 강사 요청에도 신속히 대응해 위기를 기회로 전환했습니다. 안정적인 강사관리와 유연한 일정조율로 임원의 만족도를 높였고, 그 결과 다른 임원들까지 하이교육으로 전환되어 운영 중입니다.
+            급한 강사 요청에도 신속히 대응해 위기를 기회로 전환했습니다. 안정적인 강사관리와 유연한 일정조율로 임원의 만족도를 높였고, 그 결과 다른 임원들까지 하이잉글리쉬으로 전환되어 운영 중입니다.
           </blockquote>
         </article>
 
@@ -1046,12 +957,126 @@
 
     </div>
   </section>
-        <section class="solutions-section" id="service">
+
+    <!-- ===== Teachers Section ===== -->
+<section class="section" id="강사" style="background: linear-gradient(135deg, #fff5f5 0%, #ffe8e8 100%);">
+  <div class="container" style="display:grid; grid-template-columns:1fr 1fr; gap:40px; align-items:center;">
+    <!-- Left -->
+    <div class="teacher-left">
+      <h2 class="teacher-left-title">
+        강사가 바뀌면<br>
+        <span style="color:#111111;">결과가 달라집니다</span>
+      </h2>
+      <p class="teacher-left-sub">
+        추천이 아닌,<br>
+        <span>데이터로 매칭합니다</span>
+      </p>
+    </div>
+
+    <!-- Right -->
+    <div class="teacher-right" id="teacherScroll">
+      <div class="teacher-track">
+
+        <div class="teacher-card teacher-feature-card">
+          <div class="teacher-feature-main">
+            <h3 class="teacher-feature-title">강사 추천 특징</h3>
+            <div class="teacher-feature-left">
+              <ul class="teacher-feature-list">
+                <li><span class="teacher-feature-dot"></span>복수 추천 시스템</li>
+                <li><span class="teacher-feature-dot"></span>동영상 이력서</li>
+                <li><span class="teacher-feature-dot"></span>HIT 훈련 프로그램</li>
+                <li><span class="teacher-feature-dot"></span>BELT 등급제</li>
+              </ul>
+            </div>
+            <div class="teacher-feature-divider" aria-hidden="true"></div>
+            <div class="teacher-feature-right">
+              <p class="teacher-feature-desc">전국 강사 DB 기반,<br><span class="teacher-feature-nowrap">빠르고 정확한 외국어 매칭</span></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="teacher-card teacher-service-card">
+          <div class="teacher-card-header">
+            <h3 class="teacher-card-title">강사 DB 엔진</h3>
+            <div class="teacher-card-sub">
+              120명 교차 분석으로 1명 최적 매칭
+            </div>
+          </div>
+          <div class="filter-box" style="margin-top:12px;">
+            <h4>전국 강사 네트워크</h4>
+
+            <div class="filters">
+              <select id="teacherLang">
+                <option>언어 선택</option>
+                <option>영어</option>
+                <option>일본어</option>
+                <option>중국어</option>
+                <option>기타 외국어</option>
+              </select>
+
+              <select id="teacherRegion">
+                <option>지역 선택</option>
+                <option>서울·경기</option>
+                <option>충청</option>
+                <option>강원</option>
+                <option>영남</option>
+                <option>호남</option>
+                <option>제주</option>
+              </select>
+
+              <select id="teacherType">
+                <option>강사 유형</option>
+                <option>원어민</option>
+                <option>교포</option>
+                <option>한국인</option>
+              </select>
+            </div>
+
+            <button type="button" onclick="window.showTeacherCard(2)">강사 추천</button>
+
+            <div id="teacherMatchResult"></div>
+          </div>
+        </div>
+
+        <div class="teacher-card profile-showcase">
+          <h3 class="teacher-profile-title">강사 이력서 추천</h3>
+          <p class="teacher-profile-sub">수도권 3일·지방 5일 내 이력서 추천<br>강사교체 2주 일정변경·보충수업 관리</p>
+
+          <div class="teacher-image-roller" aria-label="강사 이미지 롤링">
+            <div class="tir-track">
+              <div class="tir-item"><img src="assets/images/1영어원어민강사.jpg" alt="강사 프로필"></div>
+              <div class="tir-item"><img src="assets/images/3영어원어민강사.jpg" alt="강사 프로필"></div>
+              <div class="tir-item tir-active"><img src="assets/images/2일본인강사.jpg" alt="강사 프로필"></div>
+              <div class="tir-item"><img src="assets/images/10중국어강사.jpg" alt="강사 프로필"></div>
+              <div class="tir-item"><img src="assets/images/7영어교포강사.jpg" alt="강사 프로필"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="teacher-card teacher-video-card">
+          <h3 class="teacher-video-title">동영상이력서</h3>
+          <div class="teacher-video-sound-row">
+            <button type="button" class="teacher-video-sound-btn" data-target="video-en" aria-pressed="false">영어소리켜기</button>
+            <button type="button" class="teacher-video-sound-btn" data-target="video-ja" aria-pressed="false">일본어소리켜기</button>
+            <button type="button" class="teacher-video-sound-btn" data-target="video-zh" aria-pressed="false">중국어소리켜기</button>
+          </div>
+          <div class="teacher-video-grid">
+            <video id="video-en" class="teacher-video" src="assets/images/1영어원어민강사.mp4" playsinline muted autoplay loop></video>
+            <video id="video-ja" class="teacher-video" src="assets/images/2일본어원어민강사.mp4" playsinline muted autoplay loop></video>
+            <video id="video-zh" class="teacher-video" src="assets/images/4중국어원어민강사.mp4" playsinline muted autoplay loop></video>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+        <section class="solutions-section" id="솔루션">
       <div class="solutions-wrap">
         <div class="solutions-head">
           <div class="solutions-head-left">
 
-            <h2 class="solutions-title">다양한 선택 · 맞춤 설계 교육 솔루션</h2>
+            <h2 class="solutions-title">다양한 맞춤 교육 솔루션</h2>
             <p class="solutions-desc">
               기업의 목표와 운영 환경에 맞춰 최적의 교육 솔루션을 제공합니다.
             </p>
@@ -1059,9 +1084,6 @@
               <!-- 삭제된 태그들 -->
             </div>
           </div>
-          <a href="#" class="solutions-btn">
-            전체 솔루션 보기 <span>↗</span>
-          </a>
         </div>
         <div class="solutions-list custom-layout">
           <div class="main-card-area"></div>
@@ -1744,7 +1766,7 @@
         }
       </style>
       <script>
-        const section = document.getElementById('service');
+        const section = document.getElementById('솔루션');
         const items = section.querySelectorAll('.solution-item');
         const bgColors = [ '#eef4ff', '#f0fff5', '#fff7f0', '#f9f0ff', '#f0faff' ];
         items.forEach((item, index) => {
@@ -1777,13 +1799,13 @@
       </script>
     </section>
 
-    <section class="section" id="books">
+    <section class="section" id="프로그램">
       <div class="container">
         <div class="hi-books-grid">
           <div class="hi-books-left">
             <div class="section-head" style="margin-bottom:0;">
               <!-- <span class="eyebrow">프로그램 &amp; 교재</span> -->
-              <h2 class="hi-books-title hi-books-title-gradient">레벨·니즈별 맞춤<br> 프로그램</h2>
+              <h2 class="hi-books-title hi-books-title-gradient">체계적인 직무 중심 언어 프로그램</h2>
               <p class="hi-books-desc hi-books-desc-strong">
                 <span class="hi-books-desc-main">직장인 일·학습 병행 특화</span></span>
                 <span class="hi-books-desc-sub">실전 회화 중심, 업무 즉시 활용, 자신감 향상!</span>
@@ -1971,7 +1993,7 @@
       </div>
     </section>
 
-    <section class="section" id="system">
+    <section class="section" id="운영">
       <div class="container">
         <div class="section-head">
           <h2 style="color:#111; text-align:right;">교육 성과를 만드는 운영 시스템</h2>
@@ -2052,10 +2074,10 @@
           });
         </script>
 
-    <section class="section" id="blog" style="background:#eaf3fb;">
+    <section class="section" id="자료" style="background:#eaf3fb;">
       <div class="container">
         <div class="section-head">
-          <h2>실무에 바로 쓰는 HR 교육 노하우 & 최신 트렌드</h2>
+          <h2>실무에서 바로 쓰는 HR 노트</h2>
           <p>하이잉글리쉬의 교육 운영 노하우를 공유합니다.
 </p>
         </div>
@@ -2095,13 +2117,80 @@
 
 
     <!-- 강사 지원하기: 별도 섹션으로 분리 -->
-    <section class="section" id="apply" style="margin-top:42px;">
-      <div class="container" style="margin-bottom:80px;">
+    <section class="section" id="교육문의" style="margin-top:42px;">
+      <div class="container">
+        <div class="contact-wrap" style="display: grid; grid-template-columns: 1fr 340px; gap: 40px; align-items: flex-start;">
+        <!-- Left: 교육문의 폼 -->
+        <div>
+          <div class="section-head">
+            <h2>3,000+ 기업이 선택한 이유,<br>직접 확인해보세요.</h2>
+            <p>견적서, 제안서, 강사이력서 요청</p>
+          </div>
+          <form action="https://formsubmit.co/jay@hienglish.com,jayhienglish@gmail.com" method="POST">
+            <input type="hidden" name="_captcha" value="false" />
+            <input type="hidden" name="_subject" value="[하이잉글리쉬] 홈페이지 교육문의 접수" />
+            <div class="form-grid">
+              <div>
+                <label for="company">회사</label>
+                <input id="company" name="회사" type="text" required />
+              </div>
+              <div>
+                <label for="manager">담당자</label>
+                <input id="manager" name="담당자" type="text" required />
+              </div>
+              <div>
+                <label for="phone">전화</label>
+                <input id="phone" name="전화" type="tel" required />
+              </div>
+              <div>
+                <label for="email">이메일</label>
+                <input id="email" name="이메일" type="email" required />
+              </div>
+              <div>
+                <label for="type">교육타입</label>
+                <select id="type" name="교육타입">
+                  <option>출강교육</option>
+                  <option>화상교육</option>
+                  <option>집중교육</option>
+                  <option>특강</option>
+                  <option>면접평가</option>
+                  <option>기타</option>
+                </select>
+              </div>
+              <div>
+                <label for="keyword">검색키워드</label>
+                <input id="keyword" name="검색키워드" type="text" placeholder="예: 영어회화, 비즈니스, 일본어 등" />
+              </div>
+              <div class="full">
+                <label for="message">문의</label>
+                <textarea id="message" name="문의"></textarea>
+              </div>
+            </div>
+            <div class="hero-actions" style="margin-top:22px;">
+              <button class="btn btn-primary" type="submit">문의하기</button>
+              <a class="btn btn-outline" href="tel:023351002">전화 상담 02-335-1002</a>
+            </div>
+          </form>
+        </div>
+        <!-- Right: 빠른 상담 안내 -->
+        <div>
+          <div style="margin-top:40px;"></div>
+          <article class="contact-panel">
+            <h3 style="text-align:center;">상담 안내</h3>
+            <div class="contact-points">
+                <div class="contact-point"><strong>상담 내용</strong><br />임원 1:1 강사 추천부터 지방 원어민 출강까지<br>영·일·중 면접 대행,<br>견적서·제안서·강사 이력서를<br>빠르게 제공해드립니다.</div>
+              <div class="contact-point"><strong>주소</strong><br />서울시 마포구 홍익로 5안길 8 3층</div>
+                <div class="contact-point"><strong>연락처</strong><br />02-335-1002 / jayhienglish@gmail.com</div>
+            </div>
+          </article>
+        </div>
+      </div>
+      <div class="container" id="강사지원" style="margin-bottom:80px;">
         <div class="apply-wrap" style="display: grid; grid-template-columns: 1fr 340px; gap: 40px; align-items: flex-start; width: 100%;">
           <!-- Left: 강사 지원 폼 -->
           <div>
             <div class="section-head">
-              <h2>하이교육 강사로 지원하세요.</h2>
+              <h2>하이잉글리쉬 강사로 지원하세요.</h2>
               <p>
                 <span id="apply-rolling-text" class="rolling-text">기업 출강 경험과 수업 운영 경험이 있으신 분을 환영합니다.</span>
               </p>
@@ -2139,7 +2228,7 @@
             </div>
             <form action="https://formsubmit.co/jay@hienglish.com,recruit1@hienglish.com,jayhienglish@gmail.com" method="POST">
               <input type="hidden" name="_captcha" value="false" />
-              <input type="hidden" name="_subject" value="[하이교육] 홈페이지 강사지원 접수" />
+              <input type="hidden" name="_subject" value="[하이잉글리쉬] 홈페이지 강사지원 접수" />
               <div class="form-grid">
                 <div>
                   <label for="apply-name">이름 name</label>
@@ -2201,8 +2290,7 @@
                       <div class="contact-points">
                         <div class="contact-point"><strong>우대 요소</strong><br />기업 출강 경험, 임원 일대일 수업 경험, 교재 저술, 핸드아웃 제작, 외국어 면접, 장기 수업 경험</div>
                         <div class="contact-point"><strong>기회 혜택</strong><br />강의에만 집중할 수 있는 환경을 제공합니다<br>다양한 스케줄, 전국 수업 기회, 적극적인 마케팅 지원<br>수업 트러블과 강사료 관리까지 책임지고 운영합니다.</div>
-                        <div class="contact-point"><strong>지원 방법</strong><br />폼 접수 후 이력서와 추가 자료를 이메일로 전달하면 검토가 더 빠릅니다.</div>
-                                              <div class="contact-point"><strong>지원 방법</strong><br />폼 접수 후 이력서와 추가 자료를 이메일(jayhienglish@gmail.com)로 전달하면 검토가 더 빠릅니다.</div>
+                        <div class="contact-point"><strong>지원 방법</strong><br />폼 접수 후 이력서와 추가 자료를 이메일(jayhienglish@gmail.com)로 전달하면 검토가 더 빠릅니다.</div>
 
                       </div>
                     </article>
@@ -2210,114 +2298,70 @@
         </div> <!-- end of apply-wrap -->
         </div>
       </div>
-      <div class="container" id="contact">
-        <div class="contact-wrap" style="display: grid; grid-template-columns: 1fr 340px; gap: 40px; align-items: flex-start;">
-        <!-- Left: 교육문의 폼 -->
-        <div>
-          <div class="section-head">
-            <h2>3,000+ 기업이 선택한 이유,<br>직접 확인해보세요.</h2>
-            <p>기본에 충실한 교육·HR 중심 운영·확실한 성과</p>
-          </div>
-          <form action="https://formsubmit.co/jay@hienglish.com,jayhienglish@gmail.com" method="POST">
-            <input type="hidden" name="_captcha" value="false" />
-            <input type="hidden" name="_subject" value="[하이교육] 홈페이지 교육문의 접수" />
-            <div class="form-grid">
-              <div>
-                <label for="company">회사</label>
-                <input id="company" name="회사" type="text" required />
-              </div>
-              <div>
-                <label for="manager">담당자</label>
-                <input id="manager" name="담당자" type="text" required />
-              </div>
-              <div>
-                <label for="phone">전화</label>
-                <input id="phone" name="전화" type="tel" required />
-              </div>
-              <div>
-                <label for="email">이메일</label>
-                <input id="email" name="이메일" type="email" required />
-              </div>
-              <div>
-                <label for="type">교육타입</label>
-                <select id="type" name="교육타입">
-                  <option>출강교육</option>
-                  <option>화상교육</option>
-                  <option>집중교육</option>
-                  <option>특강</option>
-                  <option>면접평가</option>
-                  <option>기타</option>
-                </select>
-              </div>
-              <div>
-                <label for="keyword">검색키워드</label>
-                <input id="keyword" name="검색키워드" type="text" placeholder="예: 영어회화, 비즈니스, 일본어 등" />
-              </div>
-              <div class="full">
-                <label for="message">문의</label>
-                <textarea id="message" name="문의"></textarea>
-              </div>
-            </div>
-            <div class="hero-actions" style="margin-top:22px;">
-              <button class="btn btn-primary" type="submit">문의하기</button>
-              <a class="btn btn-outline" href="tel:023351002">전화 상담 02-335-1002</a>
-            </div>
-          </form>
-        </div>
-        <!-- Right: 빠른 상담 안내 -->
-        <div>
-          <div style="margin-top:40px;"></div>
-          <article class="contact-panel">
-            <h3 style="text-align:center;">상담 안내</h3>
-            <div class="contact-points">
-                <div class="contact-point"><strong>상담 내용</strong><br />임원 1:1 강사 추천부터 지방 원어민 출강까지<br>영·일·중 면접 대행,<br>견적서·제안서·강사 이력서를<br>빠르게 제공해드립니다.</div>
-              <div class="contact-point"><strong>주소</strong><br />서울시 마포구 홍익로 5안길 8 3층</div>
-                <div class="contact-point"><strong>연락처</strong><br />02-335-1002 / jayhienglish@gmail.com</div>
-            </div>
-          </article>
-        </div>
-      </div>
     </section>
   </main>
 
   <footer>
-    <div class="container footer-grid">
-      <div>
-        <h3 style="margin:0 0 10px;">HiEnglish</h3>
-        <p style="margin:0; color:rgba(255,255,255,0.72);">주식회사 하이교육<br />서울시 마포구 홍익로 5안길 8 3층<br />02-335-1002<br />manage1@hienglish.com</p>
-      </div>
+    <div class="container footer-single">
+      <a href="#top" class="footer-brand" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">
+        <img src="assets/images/하이잉글리쉬.png" alt="하이잉글리쉬 로고" class="footer-logo">
+      </a>
       <nav class="footer-nav" aria-label="푸터 메뉴">
-        <a href="#company">회사소개</a>
-        <a href="#program">프로그램</a>
-        <a href="#teachers">강사진</a>
-        <a href="#cases">교육사례</a>
-        <a href="#system">운영관리</a>
-        <a href="#contact">문의</a>
+
+        <a href="#특징">특징</a>
+        <a href="#연혁">연혁</a>
+        <a href="#성과">성과</a>
+        <a href="#강사">강사</a>
+        <a href="#솔루션">솔루션</a>
+        <a href="#프로그램">프로그램</a>
+        <a href="#운영">운영</a>
+        <a href="#자료">자료</a>
+        <a href="#교육문의">교육문의</a>
+        <a href="#강사지원">강사지원</a>
       </nav>
-      <div>
-        <a class="btn btn-primary" href="#contact">교육 문의하기</a>
-        <div style="height:10px;"></div>
-        <a class="btn btn-outline" href="#apply">강사지원하기</a>
-      </div>
+      <span class="footer-copy">© 2026 HiEnglish. All rights reserved.</span>
     </div>
-    <div class="container footer-bottom">© 2026 HiEnglish. All rights reserved.</div>
+    <div class="container footer-addr">
+      주식회사 하이잉글리쉬 · 서울시 마포구 홍익로 5안길 8 3층 · 02-335-1002 · manage1@hienglish.com
+    </div>
   </footer>
 
   <div class="floating-cta" aria-label="고정 문의 버튼">
-    <a class="primary" href="#contact">교육 문의하기</a>
-    <a class="secondary" href="#apply">강사지원하기</a>
+    <a class="primary" href="#교육문의">교육문의</a>
+    <a class="secondary" href="#강사지원">강사지원</a>
   </div>
 
   <div class="seo-block" aria-hidden="true">
     <h2>기업 출강 영어 교육 전문</h2>
     <h2>기업 외국어 교육 전문</h2>
     <h2>사내 영어 교육, 기업 일본어 교육, 화상 비즈니스 영어 교육</h2>
-    <p>하이교육은 기업 출강 영어 교육, 기업 외국어 교육, 화상교육, 사내어학과정, 기업일본어교육, 비즈니스영어교육, TOSEB 평가, 맞춤 교재를 제공합니다.</p>
+    <p>하이잉글리쉬는 기업 출강 영어 교육, 기업 외국어 교육, 화상교육, 사내어학과정, 기업일본어교육, 비즈니스영어교육, TOSEB 평가, 맞춤 교재를 제공합니다.</p>
   </div>
 <script src="assets/js/main.js?v=20260410-roll3"></script>
 <script src="assets/js/books.js"></script>
 <script src="assets/js/history-rolling.js"></script>
 <script src="assets/js/ref-logo-scroll.js"></script>
 <script src="assets/js/teachers-rolling.js"></script>
+<script>
+  (function(){
+    const headlines = document.querySelectorAll('#hero-title .headline');
+    const hero = document.querySelector('.hero');
+    if(!headlines.length || !hero) return;
+
+    const bgImages = [
+      'https://images.unsplash.com/photo-1462331940025-496dfbfc7564?auto=format&fit=crop&w=1800&q=80',
+      'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1800&q=80'
+    ];
+
+    let current = 0;
+
+    setInterval(function(){
+      headlines[current].classList.remove('active');
+      current = (current + 1) % headlines.length;
+      headlines[current].classList.add('active');
+      hero.style.background = `linear-gradient(115deg, rgba(5,10,25,0.55), rgba(13,27,63,0.45)), url('${bgImages[current]}') center/cover no-repeat`;
+    }, 5000);
+  })();
+</script>
 </body>
 </html>

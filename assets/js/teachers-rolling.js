@@ -1,7 +1,7 @@
 // ===== 강사 추천 관리 이미지 롤러 (무한 연속 루프, 가운데 확대) =====
 (function () {
   function initImageRoller() {
-    var roller = document.querySelector('#teachers .teacher-image-roller');
+    var roller = document.querySelector('#강사 .teacher-image-roller');
     if (!roller) return;
 
     var track = roller.querySelector('.tir-track');
@@ -9,9 +9,6 @@
     var count = originals.length; // 5
     if (!count) return;
 
-    // ── 앞·뒤 각 count장 클론 삽입 ──────────────────────────────────────
-    // 최종 배열: [앞클론0~4] [원본0~4] [뒤클론0~4]  (총 15개)
-    // 인덱스:         0~4       5~9       10~14
     originals.forEach(function (item) {
       track.insertBefore(item.cloneNode(true), originals[0]);
     });
@@ -20,12 +17,10 @@
     });
 
     var all = Array.from(track.querySelectorAll('.tir-item')); // 15장
-
-    // 원본 가운데(원본 index 2 → 전체 index 5+2=7)에서 시작
     var active = count + Math.floor(count / 2);
 
     function itemW() {
-      return roller.clientWidth / count; // 각 아이템 = 컨테이너 폭의 1/5
+      return roller.clientWidth / count;
     }
 
     function reposition(animated) {
@@ -43,15 +38,13 @@
 
     function next() {
       active++;
-
       if (active >= count * 2) {
-        // 뒤클론 영역 진입 → 애니메이션 재생 후 조용히 원본 위치로 스냅
         markActive();
         reposition(true);
         setTimeout(function () {
-          active -= count;   // 예: 10 → 5  (원본 index 0)
+          active -= count;
           markActive();
-          reposition(false); // 전환 없이 즉시 이동 (시각적으로 동일한 위치)
+          reposition(false);
         }, 520);
       } else {
         markActive();
@@ -64,16 +57,36 @@
     setInterval(next, 2500);
   }
 
+  // ===== 동영상이력서 소리 버튼 =====
+  function initVideoSoundBtns() {
+    document.querySelectorAll('.teacher-video-sound-btn').forEach(function (btn) {
+      var targetId = btn.getAttribute('data-target');
+      var video = targetId ? document.getElementById(targetId) : null;
+      if (!video) return;
+      var labels = { 'video-en': ['영어소리켜기', '영어소리끄기'], 'video-ja': ['일본어소리켜기', '일본어소리끄기'], 'video-zh': ['중국어소리켜기', '중국어소리끄기'] };
+      btn.addEventListener('click', function () {
+        video.muted = !video.muted;
+        var pair = labels[targetId] || ['소리켜기', '소리끄기'];
+        btn.textContent = video.muted ? pair[0] : pair[1];
+        btn.setAttribute('aria-pressed', String(!video.muted));
+      });
+    });
+  }
+
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initImageRoller);
+    document.addEventListener('DOMContentLoaded', function () {
+      initImageRoller();
+      initVideoSoundBtns();
+    });
   } else {
     initImageRoller();
+    initVideoSoundBtns();
   }
 })();
 
 // ===== Teachers 우측 카드 세로 휠 롤링 =====
 (function () {
-  const section = document.getElementById('teachers');
+  const section = document.getElementById('강사');
   const track = document.querySelector('.teacher-track');
   if (!section || !track) return;
 
@@ -93,6 +106,9 @@
     current = Math.max(0, Math.min(index, total - 1));
     track.style.transform = `translateY(-${current * STEP}px)`;
   }
+
+  // 외부에서 특정 카드로 이동 가능하도록 전역 노출
+  window.showTeacherCard = function(index) { moveTo(index); };
 
   window.addEventListener('wheel', function (e) {
     const rect = section.getBoundingClientRect();

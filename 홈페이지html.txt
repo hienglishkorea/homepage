@@ -272,26 +272,28 @@
     }
 
     .hero-copy h1 {
+      position: relative;
+      min-height: 2.3em;
       margin: 18px 0;
       font-size: clamp(40px, 7vw, 76px);
       line-height: 1.05;
       letter-spacing: -0.05em;
     }
 
-    .headline-2 {
+    .headline-1, .headline-2 {
       margin: 18px 0;
       font-size: clamp(40px, 7vw, 76px);
       line-height: 1.05;
       letter-spacing: -0.05em;
-      display: inline-block;
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      transition: opacity 1.2s ease-in-out;
     }
-
-    .headline-1 {
-      margin: 18px 0;
-      font-size: clamp(40px, 7vw, 76px);
-      line-height: 1.05;
-      letter-spacing: -0.05em;
-    }
+    .headline-1 { opacity: 1; }
+    .headline-2 { opacity: 0; }
 
     .hero-copy .quote {
       margin: 0;
@@ -1322,7 +1324,7 @@
           
           <h1 id="hero-title">
             <span class="headline-1">기업 출강 교육과 화상 외국어 교육,<br />성과로 증명합니다</span>
-            <span class="headline-2" style="display:none;">외국어 교육으로 기업 경쟁력 향상</span>
+            <span class="headline-2">외국어 교육으로 기업 경쟁력 향상</span>
           </h1>
           <p class="subcopy">HR이 가장 신뢰하는 기업 외국어 교육 파트너 <span style="color:#ff3b3b;font-weight:800;">하이교육</span></p>
           <div class="hero-actions">
@@ -2254,12 +2256,12 @@ if(cWrap){
   setInterval(()=>{
     if(!h1_1 || !h1_2 || !hero) return;
     if(toggle){
-      h1_1.style.display = 'none';
-      h1_2.style.display = 'inline-block';
+      h1_1.style.opacity = '0';
+      h1_2.style.opacity = '1';
       hero.style.background = `linear-gradient(115deg, rgba(5,10,25,0.55), rgba(13,27,63,0.45)), url('${bgImages[1]}') center/cover no-repeat`;
     } else {
-      h1_1.style.display = 'inline-block';
-      h1_2.style.display = 'none';
+      h1_1.style.opacity = '1';
+      h1_2.style.opacity = '0';
       hero.style.background = `linear-gradient(115deg, rgba(5,10,25,0.55), rgba(13,27,63,0.45)), url('${bgImages[0]}') center/cover no-repeat`;
     }
     toggle = !toggle;

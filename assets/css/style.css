@@ -571,7 +571,7 @@ body {
       letter-spacing: -0.03em;
     }
 
-    #history{
+    #연혁{
   background: linear-gradient(135deg, #5fa8ff 0%, #3f7fe0 40%, #8fd0ff 100%);
 }
 
@@ -604,8 +604,8 @@ body {
       flex: 1;
     }
 
-    #history .history-intro,
-    #history .references-panel {
+    #연혁 .history-intro,
+    #연혁 .references-panel {
       height: 572px;
       min-height: 572px;
       overflow: hidden;
@@ -632,7 +632,7 @@ body {
       position: relative;
     }
 
-    #history .panel-title {
+    #연혁 .panel-title {
       margin: 0 auto 24px;
       font-size: clamp(32px, 5vw, 42px);
       font-family: inherit;
@@ -649,7 +649,7 @@ body {
       text-shadow: none;
     }
 
-    #history .panel-title::after {
+    #연혁 .panel-title::after {
       content: '';
       position: absolute;
       bottom: -16px;
@@ -911,26 +911,48 @@ body {
     footer {
       background: #071022;
       color: rgba(255,255,255,0.9);
-      padding: 56px 0 30px;
+      padding: 24px 0;
     }
 
-    .footer-grid {
-      display: grid;
-      grid-template-columns: 1.2fr 0.8fr 0.8fr;
+    .footer-single {
+      display: flex;
+      align-items: center;
       gap: 24px;
+      flex-wrap: nowrap;
+    }
+
+    .footer-brand {
+      flex-shrink: 0;
+      text-decoration: none;
+    }
+
+    .footer-logo {
+      height: 32px;
+      width: auto;
+      display: block;
     }
 
     .footer-nav {
-      display: grid;
-      gap: 10px;
+      display: flex;
+      flex-wrap: nowrap;
+      gap: 4px 16px;
+      align-items: center;
+      flex: 1;
     }
 
-    .footer-bottom {
-      margin-top: 28px;
-      padding-top: 18px;
+    .footer-copy {
+      font-size: 13px;
+      color: rgba(255,255,255,0.5);
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .footer-addr {
+      margin-top: 10px;
+      padding-top: 10px;
       border-top: 1px solid rgba(255,255,255,0.08);
-      color: rgba(255,255,255,0.6);
-      font-size: 14px;
+      font-size: 13px;
+      color: rgba(255,255,255,0.45);
     }
 
     .muted { color: var(--muted); }
@@ -1454,38 +1476,38 @@ body {
 }
 
 /* Teachers section ??stacked, scroll-triggered animations */
-#teachers .hero-title {
+#강사 .hero-title {
   min-height: auto;
 }
-#teachers .hero-title .headline {
+#강사 .hero-title .headline {
   position: relative;
   left: auto;
   top: auto;
   display: block;
 }
-#teachers .hero-title .headline-1 {
+#강사 .hero-title .headline-1 {
   opacity: 0;
   transform: translateX(-80px);
   transition: opacity 1s ease, transform 1s ease;
 }
-#teachers .hero-title .headline-2 {
+#강사 .hero-title .headline-2 {
   opacity: 0;
   transform: none;
   transition: opacity 1s ease;
 }
-#teachers .hero-title .headline-1.active {
+#강사 .hero-title .headline-1.active {
   opacity: 1;
   transform: translateX(0);
 }
-#teachers .hero-title .headline-2.active {
+#강사 .hero-title .headline-2.active {
   opacity: 1;
   transform: none;
 }
-#teachers .hero-title .headline-2 {
+#강사 .hero-title .headline-2 {
   white-space: nowrap;
 }
 
-#teachers .teacher-feature-card {
+#강사 .teacher-feature-card {
   position: relative;
   overflow: hidden;
   background: linear-gradient(180deg, #f8f1e8 0%, #ecdfcf 100%);
@@ -1493,7 +1515,7 @@ body {
   box-shadow: 0 22px 36px rgba(45, 33, 22, 0.08);
 }
 
-#teachers .teacher-feature-main {
+#강사 .teacher-feature-main {
   display: grid;
   grid-template-columns: minmax(0, 1fr) 1px minmax(0, 1fr);
   grid-template-rows: auto 1fr;
@@ -1502,26 +1524,26 @@ body {
   align-items: stretch;
 }
 
-#teachers .teacher-feature-left {
+#강사 .teacher-feature-left {
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
-#teachers .teacher-feature-divider {
+#강사 .teacher-feature-divider {
   width: 2px;
   background: linear-gradient(180deg, rgba(24, 19, 15, 0), rgba(24, 19, 15, 0.42), rgba(24, 19, 15, 0));
   border-radius: 999px;
   box-shadow: none;
 }
 
-#teachers .teacher-feature-right {
+#강사 .teacher-feature-right {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-#teachers .teacher-feature-desc {
+#강사 .teacher-feature-desc {
   margin: 0;
   color: #1d1915;
   font-family: "Aptos", "Segoe UI", sans-serif;
@@ -1533,11 +1555,11 @@ body {
   border-top: 2px solid rgba(29, 25, 21, 0.82);
 }
 
-#teachers .teacher-feature-nowrap {
+#강사 .teacher-feature-nowrap {
   white-space: nowrap;
 }
 
-#teachers .teacher-feature-title {
+#강사 .teacher-feature-title {
   grid-column: 1 / -1;
   margin: 0;
   font-size: clamp(36px, 5vw, 58px);
@@ -1550,7 +1572,7 @@ body {
   text-transform: uppercase;
 }
 
-#teachers .teacher-feature-highlight {
+#강사 .teacher-feature-highlight {
   margin: 18px 0 26px;
   color: #2a5d89;
   font-size: clamp(18px, 2vw, 24px);
@@ -1558,13 +1580,13 @@ body {
   line-height: 1.4;
 }
 
-#teachers .teacher-feature-list {
+#강사 .teacher-feature-list {
   list-style: none;
   margin: 4px 0 0;
   padding: 0;
 }
 
-#teachers .teacher-feature-list li {
+#강사 .teacher-feature-list li {
   display: flex;
   align-items: center;
   margin-bottom: 12px;
@@ -1579,7 +1601,7 @@ body {
   border-bottom: 1px solid rgba(29, 25, 21, 0.14);
 }
 
-#teachers .teacher-feature-dot {
+#강사 .teacher-feature-dot {
   width: 7px;
   height: 7px;
   background: #a13228;
@@ -1589,39 +1611,39 @@ body {
   box-shadow: 0 0 0 6px rgba(161, 50, 40, 0.08);
 }
 
-#teachers .teacher-card-header {
+#강사 .teacher-card-header {
   margin-bottom: 0;
   text-align: center;
 }
 
-#teachers .teacher-card {
+#강사 .teacher-card {
   box-sizing: border-box;
 }
 
-#teachers .teacher-service-card {
+#강사 .teacher-service-card {
   position: relative;
-  overflow: hidden;
+  overflow: visible;
   background: linear-gradient(180deg, #eadaca 0%, #d8c1aa 100%);
   border: 1px solid rgba(63, 46, 33, 0.14);
   box-shadow: 0 22px 36px rgba(52, 37, 24, 0.1);
 }
 
-#teachers .teacher-card-title {
-  margin: 0 0 22px;
+#강사 .teacher-card-title {
+  margin: 0 0 8px;
   font-size: clamp(36px, 5vw, 58px);
   font-weight: 900;
   color: #17120d;
   font-family: "Iowan Old Style", "Palatino Linotype", Georgia, serif;
   letter-spacing: -0.05em;
-  line-height: 0.96;
+  line-height: 1.1;
   text-align: center;
   text-transform: uppercase;
 }
 
-#teachers .teacher-card-sub {
+#강사 .teacher-card-sub {
   display: block;
   margin: 0 auto 4px;
-  padding: 16px 0 10px;
+  padding: 8px 0 6px;
   font-family: "Aptos", "Segoe UI", sans-serif;
   font-size: clamp(18px, 1.7vw, 22px);
   font-weight: 700;
@@ -1636,19 +1658,19 @@ body {
 }
 
 
-#teachers .filter-box {
+#강사 .filter-box {
   background: linear-gradient(180deg, #171411 0%, #0f0d0b 100%);
-  width: 50%;
+  width: 70%;
   margin: 0 auto;
-  padding: 12px;
-  border-radius: 20px;
+  padding: 8px 10px;
+  border-radius: 16px;
   border: 1px solid rgba(255, 245, 233, 0.14);
-  box-shadow: 0 18px 30px rgba(0, 0, 0, 0.24);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.24);
 }
 
-#teachers .filter-box h4 {
-  margin: 0 0 14px;
-  font-size: clamp(17px, 1.45vw, 19px);
+#강사 .filter-box h4 {
+  margin: 0 0 7px;
+  font-size: 13px;
   font-family: "Aptos", "Segoe UI", sans-serif;
   font-weight: 800;
   color: #f5eee7;
@@ -1657,38 +1679,38 @@ body {
   text-align: center;
 }
 
-#teachers .filter-box .filters {
+#강사 .filter-box .filters {
   display: grid;
-  gap: 12px;
-  margin-bottom: 12px;
+  gap: 6px;
+  margin-bottom: 7px;
 }
 
-#teachers .filter-box select {
+#강사 .filter-box select {
   width: 100%;
-  padding: 12px 15px;
+  padding: 6px 10px;
   border-radius: 999px;
   border: 1px solid rgba(255, 245, 233, 0.16);
   font-family: "Aptos", "Segoe UI", sans-serif;
-  font-size: clamp(17px, 1.45vw, 19px);
+  font-size: 13px;
   background: rgba(255, 255, 255, 0.14);
   color: #f5eee7;
   appearance: none;
 }
 
-#teachers .filter-box select option {
+#강사 .filter-box select option {
   color: #17120d;
   background: #f3ece4;
 }
 
-#teachers .filter-box button {
+#강사 .filter-box button {
   width: 100%;
-  padding: 13px 18px;
+  padding: 7px 12px;
   background: #f3ece4;
   color: #17120d;
   border: none;
   border-radius: 999px;
   font-family: "Aptos", "Segoe UI", sans-serif;
-  font-size: clamp(17px, 1.45vw, 19px);
+  font-size: 13px;
   font-weight: 900;
   cursor: pointer;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -1696,19 +1718,19 @@ body {
   text-transform: uppercase;
 }
 
-#teachers .filter-box button:hover {
+#강사 .filter-box button:hover {
   transform: translateY(-2px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
 }
 
-#teachers #teacherMatchResult {
+#강사 #teacherMatchResult {
   margin-top: 12px;
   font-weight: 700;
   color: #f3f6fb;
   min-height: 24px;
 }
 
-#teachers .profile-showcase {
+#강사 .profile-showcase {
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -1718,7 +1740,7 @@ body {
   box-shadow: 0 24px 40px rgba(23, 15, 10, 0.28);
 }
 
-#teachers .teacher-profile-title {
+#강사 .teacher-profile-title {
   margin: 0;
   font-size: clamp(36px, 5vw, 58px);
   font-weight: 900;
@@ -1730,7 +1752,7 @@ body {
   text-transform: uppercase;
 }
 
-#teachers .teacher-profile-sub {
+#강사 .teacher-profile-sub {
   margin: 12px auto 14px;
   padding: 16px 0 10px;
   font-family: "Aptos", "Segoe UI", sans-serif;
@@ -1744,7 +1766,7 @@ body {
   border-bottom: 1px solid rgba(247, 239, 230, 0.18);
 }
 
-#teachers .teacher-image-roller {
+#강사 .teacher-image-roller {
   position: relative;
   flex: 1;
   min-height: 0;
@@ -1755,11 +1777,11 @@ body {
   box-shadow: none;
 }
 
-#teachers .teacher-image-roller.is-recommended {
+#강사 .teacher-image-roller.is-recommended {
   animation: teacherRollerPulse 1s ease;
 }
 
-#teachers .tir-track {
+#강사 .tir-track {
   display: flex;
   align-items: center;
   height: 100%;
@@ -1767,7 +1789,7 @@ body {
   will-change: transform;
 }
 
-#teachers .tir-item {
+#강사 .tir-item {
   flex-shrink: 0;
   width: 20%;       /* 5장 × 20% = 전체 너비 */
   height: 75%;
@@ -1780,21 +1802,21 @@ body {
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.10);
 }
 
-#teachers .tir-item.tir-active {
+#강사 .tir-item.tir-active {
   opacity: 1;
   transform: scale(1.12);
   box-shadow: 0 16px 36px rgba(0, 0, 0, 0.22);
   z-index: 2;
 }
 
-#teachers .tir-item img {
+#강사 .tir-item img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
 }
 
-#teachers .teacher-video-card {
+#강사 .teacher-video-card {
   display: flex;
   flex-direction: column;
   background: linear-gradient(180deg, #2a1f17 0%, #0f0a07 100%);
@@ -1802,7 +1824,7 @@ body {
   box-shadow: 0 26px 42px rgba(10, 6, 4, 0.38);
 }
 
-#teachers .teacher-video-title {
+#강사 .teacher-video-title {
   margin: 0 0 16px;
   font-size: clamp(36px, 5vw, 58px);
   font-weight: 900;
@@ -1814,7 +1836,7 @@ body {
   text-transform: uppercase;
 }
 
-#teachers .teacher-video-sub {
+#강사 .teacher-video-sub {
   margin: 0 0 16px;
   padding: 16px 0 10px;
   font-family: "Aptos", "Segoe UI", sans-serif;
@@ -1828,7 +1850,7 @@ body {
   border-bottom: 1px solid rgba(247, 239, 230, 0.18);
 }
 
-#teachers .teacher-video {
+#강사 .teacher-video {
   flex: 1;
   min-height: 0;
   width: 100%;
@@ -1840,7 +1862,7 @@ body {
   display: block;
 }
 
-#teachers .teacher-video-sound-btn {
+#강사 .teacher-video-sound-btn {
   margin-top: 12px;
   align-self: center;
   padding: 10px 20px;
@@ -1855,7 +1877,7 @@ body {
   cursor: pointer;
 }
 
-#teachers .teacher-video-sound-btn[aria-pressed="true"] {
+#강사 .teacher-video-sound-btn[aria-pressed="true"] {
   background: #f3ece4;
   color: #17120d;
 }

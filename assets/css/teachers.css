@@ -3,10 +3,8 @@
 /* Left */
 .teacher-left {
   padding: 32px;
-  background: linear-gradient(135deg, #fff5f5 0%, #ffe8e8 100%);
-  border: 1px solid #ffcdd2;
+  background: transparent;
   border-radius: 24px;
-  box-shadow: 0 12px 32px rgba(255, 45, 45, 0.08);
 }
 
 .teacher-left-title {
@@ -20,11 +18,11 @@
 
 .teacher-left-sub {
   margin-top: 18px;
-  font-size: clamp(24px, 3vw, 34px);
-  font-weight: 900;
+  font-size: clamp(20px, 2.7vw, 31px);
+  font-weight: 700;
   line-height: 1.3;
-  text-align: right;
-  color: #2d6cff;
+  text-align: left;
+  color: #888888;
 }
 
 /* Right: Vertical rolling card deck */
@@ -71,7 +69,7 @@
 }
 
 /* ===== 강사 추천 관리 이미지 롤러 ===== */
-#teachers .teacher-image-roller {
+#강사 .teacher-image-roller {
   position: relative;
   flex: 1;
   min-height: 0;
@@ -80,7 +78,7 @@
   margin-top: 16px;
 }
 
-#teachers .tir-track {
+#강사 .tir-track {
   display: flex;
   align-items: center;
   height: 100%;
@@ -88,9 +86,9 @@
   will-change: transform;
 }
 
-#teachers .tir-item {
+#강사 .tir-item {
   flex-shrink: 0;
-  width: 20%;      /* 5장 × 20% = 100% */
+  width: 20%;
   height: 75%;
   border-radius: 12px;
   overflow: hidden;
@@ -100,16 +98,66 @@
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.10);
 }
 
-#teachers .tir-item.tir-active {
+#강사 .tir-item.tir-active {
   opacity: 1;
-  transform: scale(1.12);
+  transform: scale(1.35);
   box-shadow: 0 16px 36px rgba(0, 0, 0, 0.22);
   z-index: 2;
 }
 
-#teachers .tir-item img {
+#강사 .tir-item img {
   width: 100%;
   height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ===== 동영상이력서 카드 ===== */
+.teacher-video-card {
+  background: linear-gradient(135deg, #d4f5e0, #eafff2);
+  display: flex !important;
+  flex-direction: column !important;
+  overflow: hidden;
+}
+
+.teacher-video-title {
+  flex-shrink: 0;
+  margin: 0 0 6px;
+}
+
+.teacher-video-sound-row {
+  display: flex;
+  gap: 6px;
+  flex-shrink: 0;
+  margin-bottom: 8px;
+}
+
+.teacher-video-sound-btn {
+  flex: 1;
+  font-size: 10px;
+  padding: 4px 6px;
+  border-radius: 20px;
+  border: 1px solid #2d6cff;
+  background: #fff;
+  color: #2d6cff;
+  cursor: pointer;
+  white-space: nowrap;
+  text-align: center;
+}
+
+.teacher-video-grid {
+  display: flex;
+  gap: 8px;
+  flex: 1;
+  min-height: 0;
+}
+
+#강사 .teacher-video {
+  flex: 1;
+  width: 0;
+  min-width: 0;
+  height: 100%;
+  border-radius: 10px;
   object-fit: cover;
   display: block;
 }
