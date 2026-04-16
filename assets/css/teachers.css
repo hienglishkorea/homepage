@@ -13,7 +13,7 @@
   font-weight: 900;
   line-height: 1.2;
   letter-spacing: -0.04em;
-  color: #0d1b3f;
+  color: #ffffff;
 }
 
 .teacher-left-sub {
@@ -22,7 +22,7 @@
   font-weight: 700;
   line-height: 1.3;
   text-align: left;
-  color: #888888;
+  color: #c4b5fd;
 }
 
 /* Right: Vertical rolling card deck */
@@ -43,29 +43,60 @@
   border-radius: 24px;
   padding: 30px;
   box-sizing: border-box;
-  background: #fff;
-  box-shadow: 0 8px 32px rgba(13, 27, 63, 0.10), 0 2px 8px rgba(44, 62, 80, 0.04);
-  border: 1px solid #e4edf8;
+  background: rgba(255,255,255,0.06);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+  border: 1px solid rgba(255,255,255,0.12);
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  color: #fff;
 }
 
-/* Card variants (inline backgrounds removed from HTML; set here) */
+/* Card variants */
 .teacher-feature-card {
-  background: linear-gradient(135deg, #c7d8ff, #e8f0ff);
+  background: linear-gradient(135deg, #1e0a50 0%, #2d1070 100%);
 }
 
 .teacher-service-card {
-  background: linear-gradient(135deg, #e0d4ff, #f3eaff);
+  background: linear-gradient(135deg, #0d1545 0%, #1a1265 100%);
 }
 
 .profile-showcase {
-  background: linear-gradient(135deg, #fff3c4, #fffbe6);
+  background: linear-gradient(135deg, #220a48 0%, #380f68 100%);
 }
 
 .teacher-video-card {
-  background: linear-gradient(135deg, #d4f5e0, #eafff2);
+  background: linear-gradient(135deg, #0a1a40 0%, #160a50 100%);
+}
+
+/* 카드 내 텍스트 밝게 */
+#강사 .teacher-feature-title,
+#강사 .teacher-card-title,
+#강사 .teacher-profile-title,
+#강사 .teacher-video-title { color: #ffffff; }
+
+#강사 .teacher-feature-list li,
+#강사 .teacher-feature-desc,
+#강사 .teacher-card-sub,
+#강사 .teacher-profile-sub { color: #c4b5fd; }
+
+#강사 .filter-box h4 { color: #e2d9f3; }
+
+#강사 .filter-box select {
+  background: rgba(255,255,255,0.1);
+  color: #fff;
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 8px;
+}
+
+#강사 .filter-box button {
+  background: linear-gradient(135deg, #7c3aed, #a855f7);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-weight: 700;
+  cursor: pointer;
 }
 
 /* ===== 강사 추천 관리 이미지 롤러 ===== */
@@ -114,7 +145,7 @@
 
 /* ===== 동영상이력서 카드 ===== */
 .teacher-video-card {
-  background: linear-gradient(135deg, #d4f5e0, #eafff2);
+  background: linear-gradient(135deg, #0a1a40 0%, #160a50 100%);
   display: flex !important;
   flex-direction: column !important;
   overflow: hidden;
@@ -137,9 +168,9 @@
   font-size: 10px;
   padding: 4px 6px;
   border-radius: 20px;
-  border: 1px solid #2d6cff;
-  background: #fff;
-  color: #2d6cff;
+  border: 1px solid rgba(255,255,255,0.3);
+  background: rgba(255,255,255,0.1);
+  color: #e2d9f3;
   cursor: pointer;
   white-space: nowrap;
   text-align: center;

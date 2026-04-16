@@ -3,9 +3,9 @@
           // 새로운 과정명 및 캡슐 라벨 커스텀 (예시)
           const hi_courses = [
             // 영어
-            {lang:'영어',level:'1Lv',name:'영어회화 입문',capsule:'입문',book:'HiFive 1',target:'영어를 기초부터 다시 시작하는 학습자, 영어 발화에 익숙하지 않은 입문자',goal:'회화에 필요한 기초 문법을 익히고, 한 문장 단위의 간단한 표현을 말할 수 있도록 훈련',content:['be동사 활용 기초','시제 변화 기초','현재완료 표현','수여동사, 지각동사, 동명사, to부정사','자기소개, 감정·상태 표현, 경험 말하기, 부탁하기'],effect:['영어 말하기에 대한 심리적 장벽 완화','기초 문장 구조 이해','간단한 일상 표현 발화 가능']},
-            {lang:'영어',level:'2Lv',name:'영어회화 초급',capsule:'초급',book:'HiFive 2',target:'기초 문법을 어느 정도 학습했으며, 더 다양한 표현 확장이 필요한 초급 학습자',goal:'여러 상황에서 자주 쓰는 동사와 구문을 익혀 영어 표현을 습관처럼 말할 수 있도록 훈련',content:['do / be / get / make','have / give / put / take','go / come','전치사 on / off','권유하기, 과거 경험 말하기, 통근 설명, 길 안내, 이유 설명'],effect:['단순 암기식 표현에서 벗어나 상황별 응용 가능','실생활 대화에서 활용 가능한 표현력 확대','초급 단계에서의 말하기 자신감 강화']},
-            {lang:'영어',level:'3Lv',name:'생활영어 1',capsule:'생활영어1',book:'English Spectrum 1',target:'기초 문법과 어휘를 익힌 뒤, 보다 자연스러운 생활영어 회화를 원하는 학습자',goal:'다양한 생활 상황에서 영어로 능숙하게 대화할 수 있는 기반 마련',content:['가족, 휴일, 결혼, 감정, 성격, 외모, 날씨, 쇼핑 등 생활 주제','I used to~, I should’ve~, I wonder why~ 등 원어민이 자주 쓰는 표현','가족 이야기, 조문 상황, 약속 잡기, 캠핑 여행 등 롤플레이'],effect:['일상적·사회적 상황에서 자연스러운 말하기 가능','패턴 중심 회화 응용력 향상','생활영어 친숙도 상승']},
+            {lang:'영어',level:'1Lv',name:'영어회화 입문',capsule:'입문',book:'HiFive 1',target:'영어를 기초부터 다시 시작하는 입문자',goal:'회화에 필요한 문법을 익히고, 문장 단위의 간단한 표현을 말할 수 있도록 훈련',content:['be동사 활용 기초','시제 변화 기초','현재완료 표현','수여동사, 지각동사, 동명사, to부정사','자기소개, 감정·상태 표현, 경험 말하기, 부탁하기'],effect:['영어 말하기에 대한 심리적 장벽 완화','기초 문장 구조 이해','간단한 일상 표현 발화 가능']},
+            {lang:'영어',level:'2Lv',name:'영어회화 초급',capsule:'초급',book:'HiFive 2',target:'기초 문법을 학습하고, 다양한 표현이 필요한 초급 학습자',goal:'자주 쓰는 동사·구문을 익혀 영어 표현을 습관처럼 말할 수 있도록 훈련',content:['do / be / get / make','have / give / put / take','go / come','전치사 on / off','권유하기, 과거 경험 말하기, 통근 설명, 길 안내, 이유 설명'],effect:['단순 암기식 표현에서 벗어나 상황별 응용 가능','실생활 대화에서 활용 가능한 표현력 확대','초급 단계에서의 말하기 자신감 강화']},
+            {lang:'영어',level:'3Lv',name:'생활영어 1',capsule:'생활영어1',book:'English Spectrum 1',target:'기초 문법·어휘를 익힌 뒤, 자연스런 의사 표현을 원하는 학습자',goal:'다양한 생활 상황에서 영어로 능숙하게 대화할 수 있는 기반 마련',content:['가족, 휴일, 결혼, 감정, 성격, 외모, 날씨, 쇼핑 등 생활 주제','I used to~, I should’ve~, I wonder why~ 등 원어민이 자주 쓰는 표현','가족 이야기, 조문 상황, 약속 잡기, 캠핑 여행 등 롤플레이'],effect:['일상적·사회적 상황에서 자연스러운 말하기 가능','패턴 중심 회화 응용력 향상','생활영어 친숙도 상승']},
             {lang:'영어',level:'3Lv',name:'생활영어 2',capsule:'생활영어2',book:'English Spectrum 2',target:'해외 출장, 여행, 외부 방문 등 실제 이동 상황에서 영어가 필요한 학습자',goal:'공항 출국부터 현지 체류, 미팅 전후 상황까지 실제 이동형 커뮤니케이션에 대응',content:['공항, 호텔, 식당, 길 찾기, 지하철, 은행, 병원, 분실물센터, 문화생활','You only need to~, There’s no way~, That’s why~, Do you want me to~ 등 실전 구문','출국, 예약, 주문, 길 묻기, 편의시설 이용, 문화활동 관련 대화'],effect:['해외 출장·여행 시 필요한 기본 회화 대응 가능','현장 상황 대처력 향상','이동·체류 관련 영어 실용성 강화']},
             {lang:'영어',level:'3Lv',name:'뉴스영어',capsule:'뉴스영어',book:'AUDISAY',target:'영어로 시사 이슈를 읽고 의견을 말할 수 있는 수준까지 확장하고 싶은 직장인·임원',goal:'뉴스 기반 읽기와 토론을 통해 시사 영어 이해력과 의견 표현력 강화',content:['Summary로 주제 워밍업','Key Vocabulary 학습','Reading Passage 독해','Quiz를 통한 유의어 확장','Discussion Questions 기반 토론','Audio File 활용 청취 훈련'],effect:['시사 주제 이해도 향상','어휘 확장 및 논리적 의견 제시 능력 강화','임원 대상 고급 토론 수업에 적합']},
             {lang:'영어',level:'4Lv',name:'비즈영어 1',capsule:'비즈영어1',book:'Business Pioneer Office',target:'사무실·고객응대·전화·회의·PT 등 업무 현장에서 영어 사용이 필요한 직장인',goal:'사무 환경에서 발생하는 주요 업무 상황을 영어로 처리할 수 있도록 훈련',content:['Socializing, Telephoning, Meeting, Presentation','고객 환영, 자기소개, 안내, 전화 연결, 메시지 받기, 일정 조정','회의 준비, 의견 교환, 동의·비동의 표현','PT 시작, 목적 소개, 비교·강조, 시각자료 활용, 마무리'],effect:['기본적인 업무용 영어 커뮤니케이션 수행 가능','고객 응대, 전화, 회의, 발표의 핵심 표현 습득','사내외 커뮤니케이션 자신감 향상']},
@@ -38,6 +38,37 @@
             {lang:'기타',level:'2Lv',name:'한국어 초급',capsule:'초급',book:'세종 한국어 1',target:'한국어를 처음 배우는 외국인',goal:'기초 한국어 습득 및 일상 표현 이해',content:['인사','숫자','기본 문장','일상 회화'],effect:['기초 한국어 회화 가능']},
             {lang:'기타',level:'3Lv',name:'한국어 중급',capsule:'중급',book:'세종 한국어 3',target:'한국어 중급 학습자',goal:'중급 한국어 회화 및 실무 표현 습득',content:['중급 문법','실무 회화','비즈니스 표현','문화 이해'],effect:['중급 한국어 실무 대응']},
           ];
+          const bookImgMap = {
+            'HiFive 1': 'highfive1.png',
+            'HiFive 2': 'highfive2.png',
+            'English Spectrum 1': 'spectrum1.png',
+            'English Spectrum 2': 'spectrum2.png',
+            'Business Pioneer Office': 'pioneer1.png',
+            'Business Pioneer Job': 'pioneer2.png',
+            'Business Interaction Meeting': 'Intermeeting.png',
+            'Business Interaction Presentation': 'Interpt.png',
+            'Business Interaction E-mail': 'Interemail.png',
+            '끝장 중국어 – 기초_1Lv': 'chinese1.png',
+            '끝장 중국어 – 기초_2Lv': 'chinese2.png',
+            '끝장 중국어 – 생활회화': 'chinese3.png',
+            '끝장 중국어 – 오피스 회화': 'chinese4.png',
+            '끝장 중국어 – 주재원 과정': 'chinese4.png',
+            '끝장 일본어_1Lv': 'japanese1.png',
+            '끝장 일본어_2Lv': 'japanese2.png',
+            '끝장 일본어_3Lv': 'japanese3.png',
+            '끝장 일본어_4Lv': 'japanese3.png',
+            '끝장 일본어_5Lv': 'japanese3.png',
+            '끝장 일본어_6Lv': 'japanese3.png',
+            '세종 한국어 1_1Lv': 'korean1.png',
+            '세종 한국어 1_2Lv': 'korean2.png',
+            '세종 한국어 3': 'korean3.png',
+            '끝장 베트남어': 'vetnamese1.png',
+            '끝장 인도네시아어': 'indonesian1.png',
+            '끝장 스페인어': 'spainese1.png',
+          };
+          function getBookImg(bookName, level) {
+            return bookImgMap[bookName + '_' + level] || bookImgMap[bookName] || null;
+          }
           const hi_langs = ['영어','중국어','일본어','기타'];
           const hi_levels = ['1Lv','2Lv','3Lv','4Lv','5Lv','6Lv'];
           // 상태
@@ -65,9 +96,12 @@
             }
 
             // 카드
+            const bookImg = getBookImg(filtered[hi_index] ? filtered[hi_index].book : '', hi_selectedLevel);
+            const bookImgHtml = bookImg ? `<div class="hi-book-cover-wrap"><img src="assets/images/${bookImg}" alt="교재" class="hi-book-cover"><a href="https://smartstore.naver.com/hienglishkor" target="_blank" class="hi-buy-btn">구매하기</a></div>` : '';
             let card = filtered.length ? `
               <div class="hi-card-outer">
                 <div class="hi-card">
+                  ${bookImgHtml}
                   ${courseCapsules}
                   <div class="hi-card-title" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">${filtered[hi_index].name}</div>
                   <div class="hi-card-section"><strong>교재</strong>${filtered[hi_index].book || '-'}</div>
