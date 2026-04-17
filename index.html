@@ -17,7 +17,7 @@
 <link rel="stylesheet" href="assets/css/books.css">
 <link rel="stylesheet" href="assets/css/history.css">
 <link rel="stylesheet" href="assets/css/teachers.css">
-  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/style3.css">
   <script src="assets/js/service-keyword.js"></script>
   <script src="assets/js/service-keyword-hover.js"></script>
   <script src="assets/js/service-capsule.js"></script>
@@ -509,6 +509,8 @@
   }
   .floating-cta .back-top:hover { background: #ddd; }
 </style>
+<!-- Cloudflare Turnstile -->
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 </head>
 <body>
   <header class="site-header">
@@ -951,7 +953,7 @@
 </section>
 
     <!-- ===== Teachers Section ===== -->
-<section class="section" id="강사" style="background: linear-gradient(135deg, #1a0a2e 0%, #2d1657 100%);">
+<section class="section" id="강사" style="background: linear-gradient(135deg, #1a0a2e 0%, #2d1657 100%); min-height: calc(100vh - 96px); display:flex; align-items:center;">
   <div class="container" style="display:grid; grid-template-columns:1fr 1fr; gap:40px; align-items:center;">
     <!-- Left -->
     <div class="teacher-left">
@@ -1057,7 +1059,7 @@
     </div>
   </div>
 </section>
-        <section class="solutions-section" id="솔루션">
+        <section class="solutions-section" id="솔루션" style="scroll-margin-top:80px;">
       <div class="solutions-wrap">
         <div class="solutions-head">
           <div class="solutions-head-left">
@@ -1600,7 +1602,7 @@
       <style>
         /* 스타일은 head에 두는 것이 표준이나, 요청에 따라 section 내부에 임베드 */
         * { box-sizing: border-box; }
-        .solutions-section { padding: 100px 24px; background: linear-gradient(135deg, #052e3a 0%, #0a4f5e 100%); transition: background 0.45s ease; }
+        .solutions-section { padding: clamp(24px, 3vh, 60px) 24px; min-height: calc(100vh - 80px); box-sizing: border-box; background: linear-gradient(135deg, #052e3a 0%, #0a4f5e 100%); transition: background 0.45s ease; }
         .solutions-wrap { max-width: 1280px; margin: 0 auto; }
         .solutions-head { display: flex; justify-content: center; align-items: center; gap: 24px; margin-bottom: 50px; flex-wrap: wrap; }
         .solutions-head-left { max-width: 760px; text-align: center; }
@@ -1787,13 +1789,13 @@
       </script>
     </section>
 
-    <section class="section" id="프로그램">
+    <section class="section" id="프로그램" style="min-height:calc(100vh - 80px); box-sizing:border-box;">
       <div class="container">
         <div class="hi-books-grid">
           <div class="hi-books-left">
             <div class="section-head" style="margin-bottom:0;">
               <!-- <span class="eyebrow">프로그램 &amp; 교재</span> -->
-              <h2 class="hi-books-title">하이잉글리쉬는<br><em class="sec-kw" style="color:#7c3aed; white-space:nowrap;">성과중심 프로그램을</em><br>개발합니다</h2>
+              <h2 class="hi-books-title">하이잉글리쉬는 <em class="sec-kw" style="color:#7c3aed;">성과중심 프로그램을</em> 개발합니다</h2>
               <p class="hi-books-desc hi-books-desc-strong">
                 <span class="hi-books-desc-main" style="color:#888888;">영어·일본어·중국어, 수준·직무별 과정, 실무 활용 중심</span>
                </p>
@@ -1980,7 +1982,7 @@
       </div>
     </section>
 
-    <section class="section" id="운영" style="scroll-margin-top:80px;">
+    <section class="section" id="운영" style="scroll-margin-top:80px; min-height:calc(100vh - 80px); box-sizing:border-box;">
       <div class="container">
         <div class="section-head" style="text-align:center;">
           <h2>하이잉글리쉬는 <em class="sec-kw" style="color:#10b981;">체계적인 교육 운영</em>을 합니다</h2>
@@ -2061,7 +2063,7 @@
           });
         </script>
 
-    <section class="section" id="자료" style="background:#eaf3fb;">
+    <section class="section" id="자료" style="background:#eaf3fb; min-height: calc(100vh - 96px);">
       <div class="container">
         <div class="section-head" style="text-align:center;">
           <h2>하이잉글리쉬는 <em class="sec-kw" style="color:#f43f5e;">교육 인사이트</em>와 자료를 제공합니다</h2>
@@ -2103,18 +2105,21 @@
 
 
     <!-- 강사 지원하기: 별도 섹션으로 분리 -->
-    <section class="section" id="교육문의">
+    <section class="section" id="교육문의" style="min-height:calc(100vh - 80px); box-sizing:border-box;">
       <div class="container">
         <div class="contact-wrap" style="display: grid; grid-template-columns: 1fr 340px; gap: 40px; align-items: flex-start;">
         <!-- Left: 교육문의 폼 -->
         <div>
           <div class="section-head">
-            <h2>3,000+ 기업이 선택한 이유,<br>직접 확인해보세요.</h2>
+            <h2>다른 기업이 선택한 이유, 확인해보세요.</h2>
             <p>견적서, 제안서, 강사이력서 요청</p>
           </div>
-          <form action="https://formsubmit.co/jay@hienglish.com,jayhienglish@gmail.com" method="POST">
+          <form id="form-contact" action="https://formsubmit.co/jay@hienglish.com" method="POST">
             <input type="hidden" name="_captcha" value="false" />
+            <input type="hidden" name="_cc" value="jayhienglish@gmail.com" />
             <input type="hidden" name="_subject" value="[하이잉글리쉬] 홈페이지 교육문의 접수" />
+            <!-- Honeypot: 봇이 채우면 FormSubmit이 차단 -->
+            <input type="text" name="_honey" style="display:none;" tabindex="-1" autocomplete="off" />
             <div class="form-grid">
               <div>
                 <label for="company">회사</label>
@@ -2152,8 +2157,10 @@
                 <textarea id="message" name="문의"></textarea>
               </div>
             </div>
+            <!-- Cloudflare Turnstile -->
+            <div class="cf-turnstile" data-sitekey="0x4AAAAAC-fjtAhUY6cAnqz" style="margin-top:16px;"></div>
             <div class="hero-actions" style="margin-top:22px;">
-              <button class="btn btn-primary" type="submit">문의하기</button>
+              <button id="btn-contact" class="btn btn-primary" type="submit">문의하기</button>
               <a class="btn btn-outline" href="tel:023351002">전화 상담 02-335-1002</a>
             </div>
           </form>
@@ -2212,9 +2219,12 @@
                 setInterval(showNextApplyText, 2500);
               </script>
             </div>
-            <form action="https://formsubmit.co/jay@hienglish.com,recruit1@hienglish.com,jayhienglish@gmail.com" method="POST">
+            <form id="form-apply" action="https://formsubmit.co/jay@hienglish.com" method="POST">
               <input type="hidden" name="_captcha" value="false" />
+              <input type="hidden" name="_cc" value="recruit1@hienglish.com,jayhienglish@gmail.com" />
               <input type="hidden" name="_subject" value="[하이잉글리쉬] 홈페이지 강사지원 접수" />
+              <!-- Honeypot: 봇이 채우면 FormSubmit이 차단 -->
+              <input type="text" name="_honey" style="display:none;" tabindex="-1" autocomplete="off" />
               <div class="form-grid">
                 <div>
                   <label for="apply-name">이름 name</label>
@@ -2263,8 +2273,10 @@
                   <textarea id="apply-selfintro" name="self intro"></textarea>
                 </div>
               </div>
+              <!-- Cloudflare Turnstile -->
+              <div class="cf-turnstile" data-sitekey="0x4AAAAAC-fjtAhUY6cAnqz" style="margin-top:16px;"></div>
               <div class="hero-actions" style="margin-top:22px;">
-                <button class="btn btn-primary" type="submit">강사 지원하기</button>
+                <button id="btn-apply" class="btn btn-primary" type="submit">강사 지원하기</button>
                 <a class="btn btn-outline" href="tel:02-335-1002">전화상담 02-335-1002</a>
               </div>
             </form>
@@ -2353,39 +2365,57 @@
 </script>
 <script>
 (function(){
-  const NAV_H = 100; // scroll-margin-top(96px) 이상이어야 정확히 감지됨
+  var NAV_H = 80;
+  var links = Array.from(document.querySelectorAll('nav.main-nav a[href^="#"]'));
+  var sectionIds = links.map(function(a){ return a.getAttribute('href').slice(1); });
+  var sections = sectionIds.map(function(id){ return document.getElementById(id); }).filter(Boolean);
 
-  // nav 링크에서 href를 추출해 해당 요소만 수집 (순서 보장)
-  const navLinks = Array.from(document.querySelectorAll('nav.main-nav a[href^="#"]'));
-  const sections = navLinks.map(function(a) {
-    return document.getElementById(a.getAttribute('href').slice(1));
-  }).filter(Boolean);
-
-  function update() {
-    const scrollY = window.scrollY + NAV_H;
-    let activeId = null;
-
-    // getBoundingClientRect + scrollY로 실제 문서 기준 위치 계산
-    for (var i = 0; i < sections.length; i++) {
-      var top = sections[i].getBoundingClientRect().top + window.scrollY;
-      if (top <= scrollY) {
-        activeId = sections[i].id;
-      }
-    }
-
-    navLinks.forEach(function(a) {
-      a.classList.toggle('nav-active', a.getAttribute('href') === '#' + activeId);
+  function setActive(id) {
+    links.forEach(function(a){
+      a.classList.toggle('nav-active', a.getAttribute('href') === '#' + id);
     });
   }
 
-  var rafPending = false;
-  window.addEventListener('scroll', function() {
-    if (!rafPending) {
-      rafPending = true;
-      requestAnimationFrame(function() { update(); rafPending = false; });
+  // 클릭 시: 브라우저 기본 앵커 스크롤 대신 직접 위치 계산해서 이동
+  links.forEach(function(link){
+    link.addEventListener('click', function(e){
+      e.preventDefault();
+      var id = link.getAttribute('href').slice(1);
+      var target = document.getElementById(id);
+      if(!target) return;
+      var top = 0, el = target;
+      while(el){ top += el.offsetTop; el = el.offsetParent; }
+      window.scrollTo({ top: top - NAV_H, behavior: 'smooth' });
+      setActive(id);
+    });
+  });
+
+  // 스크롤 감지
+  var sectionTops = [];
+  function cacheTops(){
+    sectionTops = sections.map(function(s){
+      var top = 0, el = s;
+      while(el){ top += el.offsetTop; el = el.offsetParent; }
+      return top;
+    });
+  }
+
+  function update(){
+    var scrollPos = window.scrollY + NAV_H + 2;
+    var activeId = null;
+    for(var i = 0; i < sections.length; i++){
+      if(sectionTops[i] <= scrollPos){ activeId = sections[i].id; }
     }
+    setActive(activeId);
+  }
+
+  var raf = false;
+  window.addEventListener('scroll', function(){
+    if(!raf){ raf = true; requestAnimationFrame(function(){ update(); raf = false; }); }
   }, { passive: true });
 
+  window.addEventListener('load', function(){ cacheTops(); update(); });
+  cacheTops();
   update();
 })();
 </script>
