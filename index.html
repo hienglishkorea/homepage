@@ -1717,7 +1717,7 @@
         }
         .solution-image::after { content: ""; position: absolute; inset: 0; background: rgba(0, 0, 0, 0.10); opacity: 0; transition: opacity 0.35s ease; pointer-events: none; }
         .solution-item:hover .solution-image::after { opacity: 1; }
-        .solution-image img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.5s ease; }
+        .solution-image img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.5s ease; }
         .solution-item:hover .solution-image img { transform: scale(1.08); }
         .solution-content { transform: translateY(0); transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1); }
         .solution-item:hover .solution-content { transform: translateY(-4px); }
