@@ -2115,9 +2115,10 @@ body {
   position: absolute;
   inset: 0;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
-  padding: 180px 60px 30px;
+  padding: 160px 60px 20px;
+  overflow-y: auto;
   transform: translateY(100%);
   opacity: 0;
   will-change: transform, opacity;
