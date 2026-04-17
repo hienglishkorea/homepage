@@ -119,8 +119,17 @@
                 <button type="button" class="hi-arrow-btn" id="hi-arrow-next" aria-label="다음 과정"${filtered.length<=1?' disabled':''}>▶</button>
               </div>
             `;
-            // 전체 구조
-            root.innerHTML = `
+            // 전체 구조 (모바일: 언어→레벨→카드 순서, PC: 기존 유지)
+            var isMobile = window.innerWidth <= 768;
+            root.innerHTML = isMobile ? `
+              <div class="hi-filter-row hi-filter-mobile">
+                <div class="hi-lang-group">${langBtns}</div>
+                <div class="hi-level-group">${levelBtns}</div>
+              </div>
+              <div class="hi-main-row">
+                <div class="hi-card-area">${card}</div>
+              </div>
+            ` : `
               <div class="hi-filter-row">
                 <div class="hi-lang-group">${langBtns}</div>
                 ${arrows}
@@ -139,11 +148,13 @@
             root.querySelectorAll('.hi-level-btn').forEach(btn=>{
               btn.onclick = function(){ hi_selectedLevel = this.dataset.level; hi_index=0; hiRender(); };
             });
-            // 슬라이드
-            root.querySelector('#hi-arrow-prev').onclick = function(){
+            // 슬라이드 (PC 전용)
+            var prevBtn = root.querySelector('#hi-arrow-prev');
+            var nextBtn = root.querySelector('#hi-arrow-next');
+            if(prevBtn) prevBtn.onclick = function(){
               if(filtered.length>1){ hi_index--; if(hi_index<0)hi_index=filtered.length-1; hiRender(); }
             };
-            root.querySelector('#hi-arrow-next').onclick = function(){
+            if(nextBtn) nextBtn.onclick = function(){
               if(filtered.length>1){ hi_index++; if(hi_index>=filtered.length)hi_index=0; hiRender(); }
             };
             // 과정 캡슐 클릭

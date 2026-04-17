@@ -1,0 +1,596 @@
+/* ====================================
+   MOBILE.CSS — max-width: 768px 전용
+   PC 화면(769px+)에는 전혀 영향 없음
+   ==================================== */
+
+@media (max-width: 768px) {
+
+  /* ── 기본 ── */
+  html, body { overflow-x: hidden; max-width: 100vw; }
+  .section { overflow: hidden; }
+
+  /* 탭 안내 배지 펄스 애니메이션 */
+  @keyframes tap-hint-pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50%       { opacity: 0.65; transform: scale(0.94); }
+  }
+
+  /* ── 햄버거 버튼 숨김 ── */
+  .menu-toggle { display: none !important; }
+
+  /* ── 탑 메뉴: 2줄 배치 ── */
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  .header-inner {
+    flex-direction: column !important;
+    min-height: auto !important;
+    padding: 8px 0 0 !important;
+    gap: 0 !important;
+    align-items: stretch !important;
+  }
+  .brand {
+    padding: 0 16px 8px;
+    min-width: auto;
+  }
+  .brand > span {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: 3px !important;
+    white-space: nowrap !important;
+  }
+  .brand-sub {
+    display: inline !important;
+    font-size: 11px !important;
+    font-weight: 700 !important;
+    color: #555555 !important;
+    white-space: nowrap;
+    order: -1 !important;
+  }
+  .brand-name {
+    font-size: 13px !important;
+  }
+  .header-cta { display: none; }
+
+  .main-nav {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: wrap !important;          /* 2줄 허용 */
+    overflow-x: hidden !important;
+    overflow-y: hidden !important;
+    white-space: normal !important;
+    gap: 0 !important;
+    padding: 4px 4px 0 !important;
+    position: static !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    border-top: 1px solid rgba(0,0,0,0.07);
+    justify-content: space-between !important;
+  }
+  .main-nav::-webkit-scrollbar { display: none; }
+
+  /* 각 메뉴 항목: 1줄에 6개(첫줄) / 4개(둘째줄) 균등 배치 */
+  .main-nav a {
+    flex: 1 1 0 !important;
+    min-width: 0 !important;
+    text-align: center !important;
+    padding: 9px 2px !important;
+    font-size: 12px !important;
+    font-weight: 600;
+    color: #22304a;
+    border-bottom: none !important;
+    white-space: nowrap;
+  }
+  .main-nav a::after { display: none !important; }
+  .main-nav a.nav-active {
+    color: #0ea5e9;
+    border-bottom: 2px solid #38bdf8 !important;
+  }
+
+  /* 강제 줄바꿈 요소 (프로그램과 운영 사이) */
+  .nav-row-break {
+    flex-basis: 100% !important;
+    height: 0 !important;
+    display: block !important;
+    order: 0;
+  }
+
+  /* ── Floating CTA 버튼 ── */
+  .floating-cta {
+    left: 12px !important;
+    right: 12px !important;
+    bottom: 12px;
+    flex-direction: row;
+    gap: 8px;
+    display: flex !important;
+  }
+  .floating-cta a {
+    flex: 1;
+    min-width: 0 !important;
+    text-align: center;
+    padding: 12px 8px;
+    font-size: 14px;
+  }
+  /* 올라가기 버튼 (모바일 전용) */
+  .floating-cta .back-top-btn {
+    display: flex !important;
+    flex: 0 0 46px !important;
+    width: 46px !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 12px 0 !important;
+    background: #334155 !important;
+    color: #fff !important;
+    font-size: 20px !important;
+    font-weight: 900 !important;
+    border-radius: 12px !important;
+    text-decoration: none !important;
+    letter-spacing: 0 !important;
+  }
+
+  /* ── 시스템(특징) 섹션: 탭 카드 전환 ── */
+  #특징 {
+    height: auto !important;
+    padding: 40px 0 !important;
+  }
+  #특징 .diff-sticky-outer {
+    position: relative !important;
+    top: auto !important;
+    height: auto !important;
+    overflow: visible !important;
+    display: block !important;
+    padding: 0 16px;
+    box-sizing: border-box;
+  }
+  #특징 .diff-section-head {
+    position: relative !important;
+    padding: 24px 0 !important;
+  }
+  #특징 .diff-sticky-wrap {
+    position: relative !important;
+    display: block !important;
+    height: auto !important;
+  }
+  #특징 .diff-card-stack {
+    position: relative !important;
+    width: 100% !important;
+    /* opacity / transform은 JS가 제어 — !important 없음 */
+    margin: 0 auto !important;
+    padding: 24px 20px !important;
+    box-sizing: border-box;
+    border-radius: 20px;
+    cursor: pointer;
+  }
+  #특징 .diff-bg-label { display: none !important; }
+  /* 도트: JS 제어이므로 표시 */
+  #특징 .diff-dots {
+    display: flex !important;
+    justify-content: center !important;
+    padding: 16px 0 8px !important;
+  }
+  /* 탭 안내 배지 */
+  #특징 .diff-sticky-wrap::after {
+    content: '👆 탭하여 다음 카드';
+    display: block;
+    text-align: center;
+    font-size: 12px;
+    font-weight: 700;
+    color: #fff;
+    background: rgba(251,191,36,0.85);
+    border-radius: 999px;
+    padding: 5px 14px;
+    margin: 10px auto 12px;
+    width: fit-content;
+    letter-spacing: -0.01em;
+    animation: tap-hint-pulse 1.8s ease-in-out infinite;
+  }
+
+  /* ── 성과 섹션: 스크롤 애니메이션 해제 ── */
+  #성과 {
+    height: auto !important;
+    padding: 0 !important;
+    background: #080c20 !important;
+  }
+  #성과 .case-sticky-outer {
+    position: relative !important;
+    top: auto !important;
+    height: auto !important;
+    overflow: visible !important;
+  }
+  #성과 .case-section-head {
+    position: relative !important;
+    background: #080c20 !important;
+    padding: 0 16px 24px !important;
+    pointer-events: auto !important;
+  }
+  #성과 .case-sticky-outer { background: #080c20; }
+  #성과 .stack-card {
+    position: relative !important;
+    inset: auto !important;
+    /* opacity / transform 은 JS가 제어 — !important 없음 */
+    padding: 24px 16px !important;
+    margin-bottom: 0 !important;
+    height: auto !important;
+    min-height: 0 !important;
+    cursor: pointer;
+  }
+  #성과 .stack-card-inner { max-width: 100%; }
+  #성과 .stack-indicator { display: none !important; }
+  /* 도트: JS 제어이므로 표시 */
+  #성과 .stack-dots {
+    display: flex !important;
+    justify-content: center !important;
+    padding: 16px 0 8px !important;
+  }
+  /* 탭 안내 배지 */
+  #성과 .case-sticky-outer::after {
+    content: '👆 탭하여 다음 카드';
+    display: block;
+    text-align: center;
+    font-size: 12px;
+    font-weight: 700;
+    color: #fff;
+    background: rgba(251,191,36,0.85);
+    border-radius: 999px;
+    padding: 5px 14px;
+    margin: 10px auto 16px;
+    width: fit-content;
+    letter-spacing: -0.01em;
+    animation: tap-hint-pulse 1.8s ease-in-out infinite;
+  }
+
+  /* 탭 안내 배지 — 강사 섹션 */
+  #강사 .teacher-right::after {
+    content: '👆 탭하여 다음 카드';
+    display: block;
+    text-align: center;
+    font-size: 12px;
+    font-weight: 700;
+    color: #fff;
+    background: rgba(251,191,36,0.85);
+    border-radius: 999px;
+    padding: 5px 14px;
+    margin: 10px auto 0;
+    width: fit-content;
+    letter-spacing: -0.01em;
+    animation: tap-hint-pulse 1.8s ease-in-out infinite;
+  }
+
+  /* ── 강사 섹션: 세로 스택 ── */
+  #강사 .container[style] {
+    display: block !important;
+    grid-template-columns: 1fr !important;
+  }
+  .teacher-left { padding: 0 0 24px !important; }
+  .teacher-right {
+    height: 320px;
+    overflow: hidden !important;
+  }
+  /* 카드 높이는 JS가 동적으로 설정 */
+
+  /* ── 솔루션 섹션: 제목 줄바꿈 + 카드 한 줄 ── */
+  .solutions-section {
+    overflow: visible !important;
+    box-sizing: border-box;
+    padding: 40px 16px !important;
+  }
+  .solutions-wrap {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow: visible !important;
+  }
+  .solutions-head {
+    margin-bottom: 24px !important;
+    gap: 8px !important;
+  }
+  /* 제목/부제목: 원래 폰트 크기 유지, 줄바꿈만 허용 */
+  .solutions-title {
+    white-space: normal !important;
+    word-break: keep-all;
+    overflow-wrap: break-word;
+    max-width: 100% !important;
+  }
+  .solutions-desc {
+    white-space: normal !important;
+    word-break: keep-all;
+    max-width: 100% !important;
+  }
+  #솔루션 .section-head h2,
+  .he-solution-text h2 {
+    white-space: normal !important;
+    word-break: keep-all;
+    overflow-wrap: break-word;
+  }
+  #솔루션 .section-head p {
+    white-space: normal !important;
+    word-break: keep-all;
+  }
+  .he-solution-grid {
+    grid-template-columns: 1fr !important;
+    grid-template-rows: auto !important;
+  }
+  /* 솔루션 카드: 메인 위 + 사이드 4개 한 줄 */
+  .solutions-list.custom-layout {
+    flex-direction: column !important;
+    width: 100% !important;
+  }
+  .main-card-area,
+  .side-cards-area {
+    width: 100% !important;
+    flex: none !important;
+  }
+  /* 메인 카드: 이미지 고정높이, 내용은 JS가 image 밖으로 이동 */
+  .main-card {
+    aspect-ratio: auto !important;
+    height: auto !important;
+    overflow: visible !important;
+    display: flex !important;
+    flex-direction: column !important;
+    padding: 0 !important;
+  }
+  .main-card .solution-image {
+    overflow: hidden !important;
+    aspect-ratio: auto !important;
+    height: 200px !important;
+    width: 100% !important;
+    margin: 0 !important;
+    flex-shrink: 0 !important;
+    border-radius: 14px 14px 0 0 !important;
+    position: relative !important;
+  }
+  .main-card .solution-image img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    border-radius: 0 !important;
+    display: block !important;
+  }
+  /* JS가 solution-image 바깥 (.main-card 직속)으로 이동시킨 메타 박스 */
+  .main-card > .maincard-desc-custom,
+  .main-card > .mobile-meta-box {
+    position: static !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    display: block !important;
+    box-sizing: border-box !important;
+    margin: 0 !important;
+    border-radius: 0 0 14px 14px !important;
+    padding: 14px 14px 16px !important;
+    background: rgba(255,255,255,0.92) !important;
+    box-shadow: none !important;
+    inline-size: auto !important;
+  }
+  .main-card > .maincard-desc-custom .maincard-meta-custom,
+  .main-card > .mobile-meta-box .maincard-meta-custom {
+    width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+  /* 작은 카드 4개: 제목만 보이게 */
+  .side-cards-grid {
+    grid-template-columns: repeat(4, 1fr) !important;
+    grid-template-rows: 1fr !important;
+    aspect-ratio: auto !important;
+    height: 70px !important;
+    gap: 3px !important;
+  }
+  .side-card {
+    border-radius: 6px !important;
+  }
+  .sidecard-title-center {
+    font-size: 0.65rem !important;
+    padding: 0.06em 0.25em !important;
+  }
+  .sidecard-type-center {
+    display: none !important;
+  }
+
+  /* ── 프로그램 섹션: 넘침 방지 ── */
+  #프로그램 { overflow: hidden !important; }
+  .hi-books-grid { display: block !important; }
+  .hi-books-title {
+    font-size: clamp(20px, 5vw, 30px) !important;
+    white-space: normal !important;
+    word-break: keep-all;
+  }
+  .hi-books-desc { white-space: normal !important; }
+  #hi-course {
+    max-width: 100% !important;
+  }
+
+  /* 프로그램: 필터 행 — 언어+레벨 세로 배치, 부제목과 간격 최소화 */
+  #hi-course {
+    padding-top: 8px !important;
+  }
+  .hi-filter-row {
+    padding-left: 8px !important;
+    padding-right: 8px !important;
+    gap: 0 !important;
+    margin-bottom: 10px !important;
+  }
+  .hi-filter-mobile {
+    flex-direction: column !important;
+    gap: 5px !important;
+  }
+  .hi-lang-group {
+    gap: 5px !important;
+    flex-wrap: nowrap !important;
+    width: 100% !important;
+  }
+  .hi-slide-arrows { display: none !important; }
+
+  /* 언어 버튼: 현재 크기의 70% */
+  .hi-lang-btn {
+    padding: 5px 7px !important;
+    font-size: 9px !important;
+    border-radius: 999px !important;
+  }
+
+  /* 레벨 버튼: 언어 버튼과 동일 크기, 보라색 */
+  .hi-level-group {
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    gap: 5px !important;
+    justify-content: stretch !important;
+    padding: 0 !important;
+    width: 100% !important;
+    margin-left: 0 !important;
+    margin-top: 0 !important;
+  }
+  .hi-level-btn {
+    padding: 5px 0 !important;
+    font-size: 9px !important;
+    flex: 1 1 0 !important;
+    min-width: 0 !important;
+    text-align: center !important;
+    background: #ede9fe !important;
+    color: #6d28d9 !important;
+    border-radius: 999px !important;
+  }
+  .hi-level-btn.hi-active {
+    background: #7c3aed !important;
+    color: #fff !important;
+  }
+
+  /* 프로그램: 교재 이미지 절반 크기 */
+  .hi-book-cover {
+    width: 73px !important;
+  }
+  .hi-book-cover-wrap {
+    top: 8px !important;
+    right: 8px !important;
+    gap: 4px !important;
+  }
+
+  /* 프로그램: 구매하기 버튼 주황 */
+  .hi-buy-btn {
+    background: #f97316 !important;
+    color: #fff !important;
+    font-size: 11px !important;
+    padding: 3px 0 !important;
+  }
+
+  /* ── 교육문의: 상담안내 박스를 폼 아래로 ── */
+  .contact-wrap {
+    display: block !important;
+    grid-template-columns: 1fr !important;
+  }
+  .contact-wrap > div + div { margin-top: 32px; }
+
+  /* ── 강사지원: 안내 박스를 폼 아래로 ── */
+  .apply-wrap {
+    display: block !important;
+    grid-template-columns: 1fr !important;
+    width: 100% !important;
+  }
+  .apply-wrap > div + div { margin-top: 32px; }
+
+  /* ── 폼 입력창: 1열 + 간격·크기 최소화 ── */
+  .form-grid {
+    grid-template-columns: 1fr !important;
+    gap: 6px !important;
+    margin-top: 8px !important;
+  }
+  /* 라벨~입력창 간격 최소화 */
+  label {
+    margin-bottom: 2px !important;
+    font-size: 12px !important;
+  }
+  input, select {
+    padding: 8px 12px !important;
+    font-size: 13px !important;
+    border-radius: 10px !important;
+  }
+  /* 텍스트 박스 높이 60% (138px → 83px) */
+  textarea {
+    min-height: 83px !important;
+    max-height: 83px !important;
+    padding: 8px 12px !important;
+    font-size: 13px !important;
+    border-radius: 10px !important;
+    resize: none !important;
+  }
+  /* 문의하기 · 전화번호 버튼 70% */
+  #교육문의 .btn,
+  #강사지원 .btn {
+    padding: 10px 15px !important;
+    font-size: 13px !important;
+    border-radius: 999px !important;
+  }
+  .hero-actions {
+    gap: 8px !important;
+  }
+
+  /* ── 연혁: 실적 로고 패널 — 롤링 활성화 ── */
+  #연혁 .references-panel {
+    height: 300px !important;
+    min-height: 300px !important;
+    overflow: hidden !important;
+  }
+  .ref-logo-section {
+    overflow: hidden !important;   /* JS가 scrollTop으로 롤링 제어 */
+    flex-wrap: wrap !important;
+    padding-left: 8px !important;
+    padding-right: 8px !important;
+    gap: 8px !important;
+    justify-content: flex-start !important;
+  }
+  .ref-logos {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 10px !important;
+    width: 100%;
+  }
+  .logo-box {
+    width: 100% !important;
+    height: 56px !important;
+  }
+  .logo-box img {
+    width: 100% !important;
+    height: auto !important;
+    max-width: 100% !important;
+    object-fit: contain;
+  }
+  .ref-group h4 {
+    font-size: 16px !important;
+    margin: 10px 0 6px !important;
+  }
+
+  /* ── 푸터: CTA 버튼에 가리지 않게 패딩 ── */
+  footer {
+    padding-bottom: 76px !important;
+  }
+  .footer-single {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 12px !important;
+  }
+  .footer-row-1 {
+    width: 100% !important;
+    flex-wrap: wrap !important;
+    align-items: center !important;
+    gap: 6px 0 !important;
+  }
+  .footer-row-1 .footer-nav {
+    width: 100% !important;
+    flex-wrap: nowrap !important;
+    justify-content: space-between !important;
+    gap: 0 !important;
+  }
+  .footer-row-1 .footer-nav a {
+    font-size: 11px !important;
+    white-space: nowrap;
+  }
+  .footer-nav {
+    flex-wrap: wrap !important;
+    gap: 6px 14px !important;
+  }
+  .footer-addr {
+    color: rgba(255,255,255,0.9) !important;
+  }
+  .footer-copy { width: 100%; }
+
+}

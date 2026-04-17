@@ -18,6 +18,7 @@
 <link rel="stylesheet" href="assets/css/history.css">
 <link rel="stylesheet" href="assets/css/teachers.css">
   <link rel="stylesheet" href="assets/css/style3.css">
+  <link rel="stylesheet" href="assets/css/mobile.css">
   <script src="assets/js/service-keyword.js"></script>
   <script src="assets/js/service-keyword-hover.js"></script>
   <script src="assets/js/service-capsule.js"></script>
@@ -519,9 +520,13 @@
         <img src="assets/images/하이잉글리쉬.png" alt="하이잉글리쉬 로고" class="brand-mark">
         <span>
           <span class="brand-name">HiEnglish</span>
-          <span class="brand-sub">기업 외국어 교육 전문</span>
+          <span class="brand-sub">Since 2002, 언어를 넘어 더 넓은 세상으로</span>
         </span>
       </a>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="메뉴">
+        <span></span><span></span><span></span>
+      </button>
 
       <nav class="main-nav" id="mainNav" aria-label="주 메뉴">
         <a href="#특징">특징</a>
@@ -530,6 +535,7 @@
         <a href="#강사">강사</a>
         <a href="#솔루션">솔루션</a>
         <a href="#프로그램">프로그램</a>
+        <span class="nav-row-break"></span>
         <a href="#운영">운영</a>
         <a href="#자료">자료</a>
         <a href="#교육문의">교육문의</a>
@@ -1418,6 +1424,15 @@
                   <!-- 메인카드 하단 설명 삭제됨 -->
                 </div>
               `;
+              // 모바일: 메타 박스를 solution-image 바깥으로 이동 (내용이 카드 안에서 모두 보이게)
+              if (window.innerWidth <= 768) {
+                const mc = document.querySelector('.main-card-area .main-card');
+                const metaBox = mc && mc.querySelector('.maincard-desc-custom');
+                if (mc && metaBox) {
+                  metaBox.classList.add('mobile-meta-box');
+                  mc.appendChild(metaBox);
+                }
+              }
               // 사이드 카드(2x2)
               let sideHtml = '';
               cardData.forEach((card, i) => {
@@ -2161,7 +2176,7 @@
             <div class="cf-turnstile" data-sitekey="0x4AAAAAC-fjtAhUY6cAnqz" style="margin-top:16px;"></div>
             <div class="hero-actions" style="margin-top:22px;">
               <button id="btn-contact" class="btn btn-primary" type="submit">문의하기</button>
-              <a class="btn btn-outline" href="tel:023351002">전화 상담 02-335-1002</a>
+              <a class="btn btn-outline" href="tel:023351002">02-335-1002</a>
             </div>
           </form>
         </div>
@@ -2277,7 +2292,7 @@
               <div class="cf-turnstile" data-sitekey="0x4AAAAAC-fjtAhUY6cAnqz" style="margin-top:16px;"></div>
               <div class="hero-actions" style="margin-top:22px;">
                 <button id="btn-apply" class="btn btn-primary" type="submit">강사 지원하기</button>
-                <a class="btn btn-outline" href="tel:02-335-1002">전화상담 02-335-1002</a>
+                <a class="btn btn-outline" href="tel:02-335-1002">02-335-1002</a>
               </div>
             </form>
           </div>
@@ -2300,12 +2315,8 @@
   </main>
 
   <footer>
-    <div class="container footer-single">
-      <a href="#top" class="footer-brand" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">
-        <img src="assets/images/하이잉글리쉬.png" alt="하이잉글리쉬 로고" class="footer-logo">
-      </a>
+    <div class="container footer-row-1">
       <nav class="footer-nav" aria-label="푸터 메뉴">
-
         <a href="#특징">특징</a>
         <a href="#연혁">연혁</a>
         <a href="#성과">성과</a>
@@ -2320,13 +2331,14 @@
       <span class="footer-copy">© 2026 HiEnglish. All rights reserved.</span>
     </div>
     <div class="container footer-addr">
-      주식회사 하이잉글리쉬 · 서울시 마포구 홍익로 5안길 8 3층 · 02-335-1002 · manage1@hienglish.com
+      주식회사 하이교육 · 서울시 마포구 홍익로 5안길 8 3층 · 02-335-1002 · jayhienglish@gmail.com
     </div>
   </footer>
 
   <div class="floating-cta" aria-label="고정 문의 버튼">
     <a class="primary" href="#교육문의">교육문의</a>
     <a class="secondary" href="#강사지원">강사지원</a>
+    <a class="back-top-btn" href="#" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;" aria-label="맨 위로">↑</a>
   </div>
 
   <div class="seo-block" aria-hidden="true">
@@ -2417,6 +2429,22 @@
   window.addEventListener('load', function(){ cacheTops(); update(); });
   cacheTops();
   update();
+})();
+</script>
+<script>
+// 햄버거 메뉴 토글
+(function(){
+  var toggle = document.getElementById('menuToggle');
+  var nav    = document.getElementById('mainNav');
+  if (!toggle || !nav) return;
+  toggle.addEventListener('click', function(){
+    nav.classList.toggle('nav-open');
+  });
+  nav.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){
+      nav.classList.remove('nav-open');
+    });
+  });
 })();
 </script>
 </body>

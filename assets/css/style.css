@@ -914,6 +914,20 @@ body {
       flex-wrap: nowrap;
     }
 
+    .footer-row-1,
+    .footer-row-2 {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      flex-wrap: nowrap;
+    }
+
+    .footer-row-2 {
+      margin-top: 8px;
+      padding-top: 8px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+
     .footer-brand {
       flex-shrink: 0;
       text-decoration: none;
@@ -945,7 +959,7 @@ body {
       padding-top: 10px;
       border-top: 1px solid rgba(255,255,255,0.08);
       font-size: 13px;
-      color: rgba(255,255,255,0.45);
+      color: rgba(255,255,255,0.9);
     }
 
     .muted { color: var(--muted); }
@@ -2055,8 +2069,9 @@ body {
 .case-sticky-outer {
   position: sticky;
   top: 0;
-  height: 100vh;
-  overflow: hidden;
+  min-height: 100vh;
+  height: auto;
+  overflow: visible;
 }
 
 .case-sticky-wrap {

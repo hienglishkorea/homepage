@@ -90,16 +90,60 @@
   const track = document.querySelector('.teacher-track');
   if (!section || !track) return;
 
-  const cards = track.children;
+  const cards = Array.from(track.children);
   const total = cards.length;
   if (total === 0) return;
 
-  // 카드 1장당 이동 거리 = 카드 높이 + margin-bottom
-  // teachers.css: height 440 + margin-bottom 20 = 460
+  let current = 0;
+
+  // 모바일: 탭으로 한 장씩 전환
+  if (window.innerWidth <= 768) {
+    const container = document.querySelector('.teacher-right');
+
+    function mStep() {
+      return container ? container.clientHeight : 320;
+    }
+
+    function moveTo(index) {
+      current = ((index % total) + total) % total;
+      track.style.transition = 'transform 0.4s cubic-bezier(.22,1,.36,1)';
+      track.style.transform = 'translateY(-' + (current * mStep()) + 'px)';
+      // 도트 업데이트
+      dots.forEach(function(d, i) { d.classList.toggle('active', i === current); });
+    }
+
+    // 도트 생성
+    var dotsWrap = document.createElement('div');
+    dotsWrap.className = 'teacher-dots-mobile';
+    dotsWrap.style.cssText = 'display:flex;justify-content:center;gap:6px;padding:10px 0 4px;';
+    var dots = cards.map(function(_, i) {
+      var d = document.createElement('div');
+      d.style.cssText = 'width:7px;height:7px;border-radius:50%;background:' + (i===0?'#7c3aed':'#d1c4e9') + ';transition:background 0.2s;';
+      dotsWrap.appendChild(d);
+      return d;
+    });
+    if (container && container.parentNode) {
+      container.parentNode.insertBefore(dotsWrap, container.nextSibling);
+    }
+
+    // 카드 높이를 컨테이너에 맞춤
+    cards.forEach(function(card) {
+      card.style.height = mStep() + 'px';
+      card.style.marginBottom = '0';
+    });
+
+    moveTo(0);
+
+    // 탭으로 다음 카드
+    section.addEventListener('click', function() {
+      moveTo(current + 1);
+    });
+    return;
+  }
+
+  // PC: 휠 롤링
   const STEP = 460;
   const LOCK_MS = 500;
-
-  let current = 0;
   let isLocked = false;
 
   function moveTo(index) {
@@ -107,7 +151,6 @@
     track.style.transform = `translateY(-${current * STEP}px)`;
   }
 
-  // 외부에서 특정 카드로 이동 가능하도록 전역 노출
   window.showTeacherCard = function(index) { moveTo(index); };
 
   window.addEventListener('wheel', function (e) {
